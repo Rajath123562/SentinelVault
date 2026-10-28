@@ -1,0 +1,4036 @@
+{
+  "dataset_id": "financial",
+  "title": "Synthetic Financial Transactions (Demo Fixture)",
+  "version": "1.0.0-demo",
+  "is_official_dataset": false,
+  "privacy_unit": "customer_id",
+  "description": "Simulated consumer banking transaction records for demonstration and utility benchmarking.",
+  "approved_fields": {
+    "transaction_type": [
+      "wire",
+      "pos",
+      "atm",
+      "ach"
+    ],
+    "risk_band": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "account_type": [
+      "checking",
+      "savings",
+      "credit"
+    ],
+    "merchant_category": [
+      "retail",
+      "healthcare",
+      "travel",
+      "groceries",
+      "technology"
+    ]
+  },
+  "total_records": 500,
+  "records": [
+    {
+      "transaction_id": "FTX-00001",
+      "customer_id": "C-0070",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00002",
+      "customer_id": "C-0194",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00003",
+      "customer_id": "C-0069",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00004",
+      "customer_id": "C-0202",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00005",
+      "customer_id": "C-0012",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00006",
+      "customer_id": "C-0218",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00007",
+      "customer_id": "C-0178",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00008",
+      "customer_id": "C-0017",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00009",
+      "customer_id": "C-0106",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00010",
+      "customer_id": "C-0229",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00011",
+      "customer_id": "C-0206",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00012",
+      "customer_id": "C-0029",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00013",
+      "customer_id": "C-0295",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00014",
+      "customer_id": "C-0122",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00015",
+      "customer_id": "C-0114",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00016",
+      "customer_id": "C-0286",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00017",
+      "customer_id": "C-0285",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00018",
+      "customer_id": "C-0269",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00019",
+      "customer_id": "C-0077",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00020",
+      "customer_id": "C-0243",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00021",
+      "customer_id": "C-0238",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00022",
+      "customer_id": "C-0286",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00023",
+      "customer_id": "C-0105",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00024",
+      "customer_id": "C-0190",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00025",
+      "customer_id": "C-0027",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00026",
+      "customer_id": "C-0309",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00027",
+      "customer_id": "C-0344",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00028",
+      "customer_id": "C-0156",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00029",
+      "customer_id": "C-0246",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00030",
+      "customer_id": "C-0204",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00031",
+      "customer_id": "C-0195",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00032",
+      "customer_id": "C-0158",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00033",
+      "customer_id": "C-0239",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00034",
+      "customer_id": "C-0105",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00035",
+      "customer_id": "C-0289",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00036",
+      "customer_id": "C-0134",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00037",
+      "customer_id": "C-0169",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00038",
+      "customer_id": "C-0256",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00039",
+      "customer_id": "C-0236",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00040",
+      "customer_id": "C-0072",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00041",
+      "customer_id": "C-0269",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00042",
+      "customer_id": "C-0004",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00043",
+      "customer_id": "C-0035",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00044",
+      "customer_id": "C-0234",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00045",
+      "customer_id": "C-0248",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00046",
+      "customer_id": "C-0283",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00047",
+      "customer_id": "C-0141",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00048",
+      "customer_id": "C-0092",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00049",
+      "customer_id": "C-0124",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00050",
+      "customer_id": "C-0182",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00051",
+      "customer_id": "C-0208",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00052",
+      "customer_id": "C-0154",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00053",
+      "customer_id": "C-0048",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00054",
+      "customer_id": "C-0244",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00055",
+      "customer_id": "C-0043",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00056",
+      "customer_id": "C-0290",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00057",
+      "customer_id": "C-0109",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00058",
+      "customer_id": "C-0144",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00059",
+      "customer_id": "C-0107",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00060",
+      "customer_id": "C-0154",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00061",
+      "customer_id": "C-0200",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00062",
+      "customer_id": "C-0041",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00063",
+      "customer_id": "C-0119",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00064",
+      "customer_id": "C-0305",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00065",
+      "customer_id": "C-0231",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00066",
+      "customer_id": "C-0193",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00067",
+      "customer_id": "C-0339",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00068",
+      "customer_id": "C-0127",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00069",
+      "customer_id": "C-0195",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00070",
+      "customer_id": "C-0185",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00071",
+      "customer_id": "C-0228",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00072",
+      "customer_id": "C-0045",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00073",
+      "customer_id": "C-0285",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00074",
+      "customer_id": "C-0182",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00075",
+      "customer_id": "C-0198",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00076",
+      "customer_id": "C-0044",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00077",
+      "customer_id": "C-0195",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00078",
+      "customer_id": "C-0138",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00079",
+      "customer_id": "C-0223",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00080",
+      "customer_id": "C-0040",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00081",
+      "customer_id": "C-0305",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00082",
+      "customer_id": "C-0156",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00083",
+      "customer_id": "C-0195",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00084",
+      "customer_id": "C-0334",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00085",
+      "customer_id": "C-0103",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00086",
+      "customer_id": "C-0164",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00087",
+      "customer_id": "C-0295",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00088",
+      "customer_id": "C-0202",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00089",
+      "customer_id": "C-0304",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00090",
+      "customer_id": "C-0237",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00091",
+      "customer_id": "C-0210",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00092",
+      "customer_id": "C-0124",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00093",
+      "customer_id": "C-0194",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00094",
+      "customer_id": "C-0299",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00095",
+      "customer_id": "C-0279",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00096",
+      "customer_id": "C-0305",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00097",
+      "customer_id": "C-0086",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00098",
+      "customer_id": "C-0170",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00099",
+      "customer_id": "C-0133",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00100",
+      "customer_id": "C-0286",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00101",
+      "customer_id": "C-0238",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00102",
+      "customer_id": "C-0054",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00103",
+      "customer_id": "C-0073",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00104",
+      "customer_id": "C-0106",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00105",
+      "customer_id": "C-0225",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00106",
+      "customer_id": "C-0023",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00107",
+      "customer_id": "C-0347",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00108",
+      "customer_id": "C-0090",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00109",
+      "customer_id": "C-0237",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00110",
+      "customer_id": "C-0096",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00111",
+      "customer_id": "C-0102",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00112",
+      "customer_id": "C-0003",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00113",
+      "customer_id": "C-0296",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00114",
+      "customer_id": "C-0167",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00115",
+      "customer_id": "C-0344",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00116",
+      "customer_id": "C-0306",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00117",
+      "customer_id": "C-0059",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00118",
+      "customer_id": "C-0089",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00119",
+      "customer_id": "C-0345",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00120",
+      "customer_id": "C-0157",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00121",
+      "customer_id": "C-0262",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00122",
+      "customer_id": "C-0295",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00123",
+      "customer_id": "C-0326",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00124",
+      "customer_id": "C-0148",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00125",
+      "customer_id": "C-0318",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00126",
+      "customer_id": "C-0070",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00127",
+      "customer_id": "C-0335",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00128",
+      "customer_id": "C-0213",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00129",
+      "customer_id": "C-0290",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00130",
+      "customer_id": "C-0141",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00131",
+      "customer_id": "C-0235",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00132",
+      "customer_id": "C-0294",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00133",
+      "customer_id": "C-0278",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00134",
+      "customer_id": "C-0112",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00135",
+      "customer_id": "C-0153",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00136",
+      "customer_id": "C-0045",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00137",
+      "customer_id": "C-0302",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00138",
+      "customer_id": "C-0085",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00139",
+      "customer_id": "C-0292",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00140",
+      "customer_id": "C-0276",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00141",
+      "customer_id": "C-0149",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00142",
+      "customer_id": "C-0070",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00143",
+      "customer_id": "C-0068",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00144",
+      "customer_id": "C-0127",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00145",
+      "customer_id": "C-0324",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00146",
+      "customer_id": "C-0232",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00147",
+      "customer_id": "C-0264",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00148",
+      "customer_id": "C-0250",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00149",
+      "customer_id": "C-0235",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00150",
+      "customer_id": "C-0112",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00151",
+      "customer_id": "C-0166",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00152",
+      "customer_id": "C-0067",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00153",
+      "customer_id": "C-0024",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00154",
+      "customer_id": "C-0064",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00155",
+      "customer_id": "C-0220",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00156",
+      "customer_id": "C-0082",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00157",
+      "customer_id": "C-0129",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00158",
+      "customer_id": "C-0027",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00159",
+      "customer_id": "C-0220",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00160",
+      "customer_id": "C-0110",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00161",
+      "customer_id": "C-0116",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00162",
+      "customer_id": "C-0062",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00163",
+      "customer_id": "C-0037",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00164",
+      "customer_id": "C-0053",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00165",
+      "customer_id": "C-0196",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00166",
+      "customer_id": "C-0036",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00167",
+      "customer_id": "C-0226",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00168",
+      "customer_id": "C-0211",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00169",
+      "customer_id": "C-0072",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00170",
+      "customer_id": "C-0180",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00171",
+      "customer_id": "C-0142",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00172",
+      "customer_id": "C-0308",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00173",
+      "customer_id": "C-0106",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00174",
+      "customer_id": "C-0331",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00175",
+      "customer_id": "C-0058",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00176",
+      "customer_id": "C-0037",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00177",
+      "customer_id": "C-0199",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00178",
+      "customer_id": "C-0242",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00179",
+      "customer_id": "C-0008",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00180",
+      "customer_id": "C-0204",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00181",
+      "customer_id": "C-0213",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00182",
+      "customer_id": "C-0328",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00183",
+      "customer_id": "C-0041",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00184",
+      "customer_id": "C-0201",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00185",
+      "customer_id": "C-0123",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00186",
+      "customer_id": "C-0060",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00187",
+      "customer_id": "C-0159",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00188",
+      "customer_id": "C-0006",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00189",
+      "customer_id": "C-0265",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00190",
+      "customer_id": "C-0138",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00191",
+      "customer_id": "C-0140",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00192",
+      "customer_id": "C-0322",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00193",
+      "customer_id": "C-0185",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00194",
+      "customer_id": "C-0189",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00195",
+      "customer_id": "C-0346",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00196",
+      "customer_id": "C-0002",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00197",
+      "customer_id": "C-0242",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00198",
+      "customer_id": "C-0019",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00199",
+      "customer_id": "C-0214",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00200",
+      "customer_id": "C-0191",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00201",
+      "customer_id": "C-0092",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00202",
+      "customer_id": "C-0036",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00203",
+      "customer_id": "C-0045",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00204",
+      "customer_id": "C-0150",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00205",
+      "customer_id": "C-0238",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00206",
+      "customer_id": "C-0280",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00207",
+      "customer_id": "C-0013",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00208",
+      "customer_id": "C-0172",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00209",
+      "customer_id": "C-0054",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00210",
+      "customer_id": "C-0252",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00211",
+      "customer_id": "C-0048",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00212",
+      "customer_id": "C-0191",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00213",
+      "customer_id": "C-0049",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00214",
+      "customer_id": "C-0304",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00215",
+      "customer_id": "C-0122",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00216",
+      "customer_id": "C-0168",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00217",
+      "customer_id": "C-0039",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00218",
+      "customer_id": "C-0080",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00219",
+      "customer_id": "C-0161",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00220",
+      "customer_id": "C-0107",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00221",
+      "customer_id": "C-0062",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00222",
+      "customer_id": "C-0309",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00223",
+      "customer_id": "C-0047",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00224",
+      "customer_id": "C-0026",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00225",
+      "customer_id": "C-0208",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00226",
+      "customer_id": "C-0128",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00227",
+      "customer_id": "C-0063",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00228",
+      "customer_id": "C-0102",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00229",
+      "customer_id": "C-0299",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00230",
+      "customer_id": "C-0102",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00231",
+      "customer_id": "C-0063",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00232",
+      "customer_id": "C-0294",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00233",
+      "customer_id": "C-0016",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00234",
+      "customer_id": "C-0182",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00235",
+      "customer_id": "C-0229",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00236",
+      "customer_id": "C-0316",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00237",
+      "customer_id": "C-0211",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00238",
+      "customer_id": "C-0197",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00239",
+      "customer_id": "C-0128",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00240",
+      "customer_id": "C-0246",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00241",
+      "customer_id": "C-0165",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00242",
+      "customer_id": "C-0164",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00243",
+      "customer_id": "C-0242",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00244",
+      "customer_id": "C-0052",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00245",
+      "customer_id": "C-0274",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00246",
+      "customer_id": "C-0182",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00247",
+      "customer_id": "C-0163",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00248",
+      "customer_id": "C-0291",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00249",
+      "customer_id": "C-0278",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00250",
+      "customer_id": "C-0047",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00251",
+      "customer_id": "C-0011",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00252",
+      "customer_id": "C-0104",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00253",
+      "customer_id": "C-0166",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00254",
+      "customer_id": "C-0073",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00255",
+      "customer_id": "C-0192",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00256",
+      "customer_id": "C-0155",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00257",
+      "customer_id": "C-0328",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00258",
+      "customer_id": "C-0288",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00259",
+      "customer_id": "C-0090",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00260",
+      "customer_id": "C-0066",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00261",
+      "customer_id": "C-0201",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00262",
+      "customer_id": "C-0314",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00263",
+      "customer_id": "C-0255",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00264",
+      "customer_id": "C-0122",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00265",
+      "customer_id": "C-0344",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00266",
+      "customer_id": "C-0108",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00267",
+      "customer_id": "C-0132",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00268",
+      "customer_id": "C-0198",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00269",
+      "customer_id": "C-0212",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00270",
+      "customer_id": "C-0193",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00271",
+      "customer_id": "C-0084",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00272",
+      "customer_id": "C-0011",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00273",
+      "customer_id": "C-0176",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00274",
+      "customer_id": "C-0281",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00275",
+      "customer_id": "C-0248",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00276",
+      "customer_id": "C-0311",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00277",
+      "customer_id": "C-0170",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00278",
+      "customer_id": "C-0277",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00279",
+      "customer_id": "C-0122",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00280",
+      "customer_id": "C-0282",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00281",
+      "customer_id": "C-0002",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00282",
+      "customer_id": "C-0246",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00283",
+      "customer_id": "C-0088",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00284",
+      "customer_id": "C-0158",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00285",
+      "customer_id": "C-0047",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00286",
+      "customer_id": "C-0190",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00287",
+      "customer_id": "C-0226",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00288",
+      "customer_id": "C-0289",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00289",
+      "customer_id": "C-0044",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00290",
+      "customer_id": "C-0117",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00291",
+      "customer_id": "C-0275",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00292",
+      "customer_id": "C-0154",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00293",
+      "customer_id": "C-0258",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00294",
+      "customer_id": "C-0086",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00295",
+      "customer_id": "C-0217",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00296",
+      "customer_id": "C-0322",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00297",
+      "customer_id": "C-0035",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00298",
+      "customer_id": "C-0283",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00299",
+      "customer_id": "C-0007",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00300",
+      "customer_id": "C-0076",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00301",
+      "customer_id": "C-0147",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00302",
+      "customer_id": "C-0336",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00303",
+      "customer_id": "C-0020",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00304",
+      "customer_id": "C-0317",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00305",
+      "customer_id": "C-0122",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00306",
+      "customer_id": "C-0191",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00307",
+      "customer_id": "C-0144",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00308",
+      "customer_id": "C-0117",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00309",
+      "customer_id": "C-0165",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00310",
+      "customer_id": "C-0331",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00311",
+      "customer_id": "C-0209",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00312",
+      "customer_id": "C-0264",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00313",
+      "customer_id": "C-0207",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00314",
+      "customer_id": "C-0089",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00315",
+      "customer_id": "C-0017",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00316",
+      "customer_id": "C-0141",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00317",
+      "customer_id": "C-0326",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00318",
+      "customer_id": "C-0191",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00319",
+      "customer_id": "C-0243",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00320",
+      "customer_id": "C-0047",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00321",
+      "customer_id": "C-0084",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00322",
+      "customer_id": "C-0347",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00323",
+      "customer_id": "C-0263",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00324",
+      "customer_id": "C-0068",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00325",
+      "customer_id": "C-0130",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00326",
+      "customer_id": "C-0217",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00327",
+      "customer_id": "C-0112",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00328",
+      "customer_id": "C-0320",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00329",
+      "customer_id": "C-0262",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00330",
+      "customer_id": "C-0312",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00331",
+      "customer_id": "C-0247",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00332",
+      "customer_id": "C-0142",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00333",
+      "customer_id": "C-0097",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00334",
+      "customer_id": "C-0308",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00335",
+      "customer_id": "C-0014",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00336",
+      "customer_id": "C-0208",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00337",
+      "customer_id": "C-0293",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00338",
+      "customer_id": "C-0274",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00339",
+      "customer_id": "C-0154",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00340",
+      "customer_id": "C-0151",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00341",
+      "customer_id": "C-0287",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00342",
+      "customer_id": "C-0114",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00343",
+      "customer_id": "C-0216",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00344",
+      "customer_id": "C-0151",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00345",
+      "customer_id": "C-0325",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00346",
+      "customer_id": "C-0062",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00347",
+      "customer_id": "C-0028",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00348",
+      "customer_id": "C-0210",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00349",
+      "customer_id": "C-0042",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00350",
+      "customer_id": "C-0161",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00351",
+      "customer_id": "C-0108",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00352",
+      "customer_id": "C-0046",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00353",
+      "customer_id": "C-0207",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00354",
+      "customer_id": "C-0020",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00355",
+      "customer_id": "C-0165",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00356",
+      "customer_id": "C-0321",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00357",
+      "customer_id": "C-0160",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00358",
+      "customer_id": "C-0302",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00359",
+      "customer_id": "C-0153",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00360",
+      "customer_id": "C-0306",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00361",
+      "customer_id": "C-0176",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00362",
+      "customer_id": "C-0207",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00363",
+      "customer_id": "C-0109",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00364",
+      "customer_id": "C-0064",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00365",
+      "customer_id": "C-0193",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00366",
+      "customer_id": "C-0305",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00367",
+      "customer_id": "C-0025",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00368",
+      "customer_id": "C-0064",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00369",
+      "customer_id": "C-0106",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00370",
+      "customer_id": "C-0340",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00371",
+      "customer_id": "C-0215",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00372",
+      "customer_id": "C-0061",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00373",
+      "customer_id": "C-0102",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00374",
+      "customer_id": "C-0184",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00375",
+      "customer_id": "C-0281",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00376",
+      "customer_id": "C-0170",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00377",
+      "customer_id": "C-0057",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00378",
+      "customer_id": "C-0039",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00379",
+      "customer_id": "C-0234",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00380",
+      "customer_id": "C-0052",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00381",
+      "customer_id": "C-0347",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00382",
+      "customer_id": "C-0049",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00383",
+      "customer_id": "C-0169",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00384",
+      "customer_id": "C-0048",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00385",
+      "customer_id": "C-0206",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00386",
+      "customer_id": "C-0245",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00387",
+      "customer_id": "C-0068",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00388",
+      "customer_id": "C-0303",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00389",
+      "customer_id": "C-0093",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00390",
+      "customer_id": "C-0067",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00391",
+      "customer_id": "C-0226",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00392",
+      "customer_id": "C-0007",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00393",
+      "customer_id": "C-0268",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00394",
+      "customer_id": "C-0247",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00395",
+      "customer_id": "C-0077",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00396",
+      "customer_id": "C-0259",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00397",
+      "customer_id": "C-0252",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00398",
+      "customer_id": "C-0026",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00399",
+      "customer_id": "C-0207",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00400",
+      "customer_id": "C-0294",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00401",
+      "customer_id": "C-0162",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00402",
+      "customer_id": "C-0053",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00403",
+      "customer_id": "C-0282",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00404",
+      "customer_id": "C-0327",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00405",
+      "customer_id": "C-0336",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00406",
+      "customer_id": "C-0115",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00407",
+      "customer_id": "C-0308",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00408",
+      "customer_id": "C-0232",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00409",
+      "customer_id": "C-0002",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00410",
+      "customer_id": "C-0281",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00411",
+      "customer_id": "C-0085",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00412",
+      "customer_id": "C-0055",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00413",
+      "customer_id": "C-0062",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00414",
+      "customer_id": "C-0174",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00415",
+      "customer_id": "C-0064",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00416",
+      "customer_id": "C-0259",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00417",
+      "customer_id": "C-0025",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00418",
+      "customer_id": "C-0091",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00419",
+      "customer_id": "C-0199",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00420",
+      "customer_id": "C-0312",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00421",
+      "customer_id": "C-0151",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00422",
+      "customer_id": "C-0309",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00423",
+      "customer_id": "C-0284",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00424",
+      "customer_id": "C-0149",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00425",
+      "customer_id": "C-0258",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00426",
+      "customer_id": "C-0288",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00427",
+      "customer_id": "C-0346",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00428",
+      "customer_id": "C-0055",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00429",
+      "customer_id": "C-0344",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00430",
+      "customer_id": "C-0147",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00431",
+      "customer_id": "C-0105",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00432",
+      "customer_id": "C-0316",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00433",
+      "customer_id": "C-0200",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00434",
+      "customer_id": "C-0341",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00435",
+      "customer_id": "C-0161",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00436",
+      "customer_id": "C-0104",
+      "transaction_type": "ach",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00437",
+      "customer_id": "C-0302",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00438",
+      "customer_id": "C-0230",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00439",
+      "customer_id": "C-0089",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00440",
+      "customer_id": "C-0143",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00441",
+      "customer_id": "C-0131",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00442",
+      "customer_id": "C-0021",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00443",
+      "customer_id": "C-0321",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00444",
+      "customer_id": "C-0184",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00445",
+      "customer_id": "C-0113",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00446",
+      "customer_id": "C-0082",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00447",
+      "customer_id": "C-0048",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00448",
+      "customer_id": "C-0170",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00449",
+      "customer_id": "C-0272",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00450",
+      "customer_id": "C-0059",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00451",
+      "customer_id": "C-0319",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00452",
+      "customer_id": "C-0196",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00453",
+      "customer_id": "C-0145",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00454",
+      "customer_id": "C-0261",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00455",
+      "customer_id": "C-0334",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00456",
+      "customer_id": "C-0050",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00457",
+      "customer_id": "C-0321",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00458",
+      "customer_id": "C-0218",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00459",
+      "customer_id": "C-0332",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00460",
+      "customer_id": "C-0013",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00461",
+      "customer_id": "C-0045",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00462",
+      "customer_id": "C-0286",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00463",
+      "customer_id": "C-0209",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00464",
+      "customer_id": "C-0222",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00465",
+      "customer_id": "C-0274",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00466",
+      "customer_id": "C-0033",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00467",
+      "customer_id": "C-0258",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00468",
+      "customer_id": "C-0311",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00469",
+      "customer_id": "C-0203",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00470",
+      "customer_id": "C-0113",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00471",
+      "customer_id": "C-0152",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00472",
+      "customer_id": "C-0006",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00473",
+      "customer_id": "C-0294",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00474",
+      "customer_id": "C-0157",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00475",
+      "customer_id": "C-0109",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00476",
+      "customer_id": "C-0083",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00477",
+      "customer_id": "C-0100",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00478",
+      "customer_id": "C-0028",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00479",
+      "customer_id": "C-0149",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00480",
+      "customer_id": "C-0298",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00481",
+      "customer_id": "C-0344",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "savings",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00482",
+      "customer_id": "C-0036",
+      "transaction_type": "pos",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00483",
+      "customer_id": "C-0169",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00484",
+      "customer_id": "C-0290",
+      "transaction_type": "atm",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00485",
+      "customer_id": "C-0003",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00486",
+      "customer_id": "C-0142",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00487",
+      "customer_id": "C-0246",
+      "transaction_type": "ach",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00488",
+      "customer_id": "C-0250",
+      "transaction_type": "wire",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "technology"
+    },
+    {
+      "transaction_id": "FTX-00489",
+      "customer_id": "C-0042",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00490",
+      "customer_id": "C-0135",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00491",
+      "customer_id": "C-0260",
+      "transaction_type": "wire",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00492",
+      "customer_id": "C-0303",
+      "transaction_type": "pos",
+      "risk_band": "low",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00493",
+      "customer_id": "C-0279",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00494",
+      "customer_id": "C-0201",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "travel"
+    },
+    {
+      "transaction_id": "FTX-00495",
+      "customer_id": "C-0069",
+      "transaction_type": "ach",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "retail"
+    },
+    {
+      "transaction_id": "FTX-00496",
+      "customer_id": "C-0204",
+      "transaction_type": "atm",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00497",
+      "customer_id": "C-0315",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00498",
+      "customer_id": "C-0082",
+      "transaction_type": "pos",
+      "risk_band": "high",
+      "account_type": "credit",
+      "merchant_category": "healthcare"
+    },
+    {
+      "transaction_id": "FTX-00499",
+      "customer_id": "C-0248",
+      "transaction_type": "atm",
+      "risk_band": "low",
+      "account_type": "checking",
+      "merchant_category": "groceries"
+    },
+    {
+      "transaction_id": "FTX-00500",
+      "customer_id": "C-0119",
+      "transaction_type": "wire",
+      "risk_band": "medium",
+      "account_type": "savings",
+      "merchant_category": "healthcare"
+    }
+  ]
+}

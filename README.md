@@ -1,12 +1,14 @@
 # HOTFIX — Privacy-by-Design Analytics Gateway
 
-[![Project Phase](https://img.shields.io/badge/Phase-Phase%201%20Foundation-blue.svg)](#)
-[![Privacy Releases](https://img.shields.io/badge/Privacy%20Releases-Disabled%20(Fail%20Closed)-red.svg)](#)
-[![Tests Passing](https://img.shields.io/badge/Tests-22%2F22%20Passing-brightgreen.svg)](#)
-[![Team](https://img.shields.io/badge/Team%20ID-UG%2059-indigo.svg)](#)
+[![Project Phase](https://img.shields.io/badge/Milestone-MVP%20Verified-brightgreen.svg)](#)
+[![Differential Privacy](https://img.shields.io/badge/Mechanism-Laplace%20(diffprivlib)-blue.svg)](#)
+[![Budget Ledger](https://img.shields.io/badge/Budget%20Cap-ε%20%E2%89%A4%205.0-orange.svg)](#)
+[![Cryptography](https://img.shields.io/badge/Signatures-Ed25519%20%2B%20SHA--256-indigo.svg)](#)
+[![Tests Passing](https://img.shields.io/badge/Tests-54%2F54%20Passing-brightgreen.svg)](#)
+[![Team](https://img.shields.io/badge/Team%20ID-UG%2059-purple.svg)](#)
 [![Track](https://img.shields.io/badge/Track-Privacy%20by%20Design-purple.svg)](#)
 
-HOTFIX is a production-grade **Privacy-by-Design Analytics Gateway** designed for sensitive health records and financial transaction data. It allows authorized analysts to extract statistical insights without ever exposing individual microdata rows or risking membership inference attacks.
+HOTFIX is an enterprise-grade **Privacy-by-Design Analytics Gateway** engineered for sensitive health records and financial transactions. It enables authorized analysts to query aggregate statistical insights without exposing underlying individual records, risking re-identification, or exceeding strict privacy budget caps.
 
 ---
 
@@ -18,225 +20,122 @@ HOTFIX is a production-grade **Privacy-by-Design Analytics Gateway** designed fo
 * **Track**: Privacy by Design — Unlock Data Without Exposing It
 * **Domain**: Cybersecurity, Privacy Engineering, Responsible AI, Data Analytics & Machine Learning
 
-### Core Architectural Workflow (Target Product):
-$$\text{User Authentication} \to \text{Authorization (RBAC)} \to \text{Query Validation} \to \text{Sensitivity/Contribution Bounds} \to \text{Privacy Budget Check} \to \text{Differential Privacy Noise} \to \text{Risk Assessment} \to \text{Budget Commit} \to \text{Privacy Receipt} \to \text{Protected Result}$$
-
----
-
-## 2. Phase 1 Implementation Status
-
-Phase 1 establishes the verified software foundation, configuration subsystem, automated test harnesses, and client-server communication channels:
-
-| Capability | Module / Layer | Phase 1 Status |
-| :--- | :--- | :--- |
-| **Application Process & Liveness** | FastAPI (`backend/app/main.py`) | **VERIFIED** (`GET /health`) |
-| **Readiness & Lifecycle Probe** | FastAPI (`backend/app/api/routes/system.py`) | **VERIFIED** (`GET /ready`) |
-| **Diagnostic Status API** | FastAPI (`backend/app/api/routes/system.py`) | **VERIFIED** (`GET /api/system/status`) |
-| **Fail-Closed Privacy Release Gate** | Configuration Core (`backend/app/core/config.py`) | **VERIFIED** (Releases strictly blocked) |
-| **Standardized Error Sanitization** | Pydantic Schema (`backend/app/schemas/system.py`) | **VERIFIED** (Zero stack trace leaks) |
-| **Web Dashboard & Diagnostics** | React 19 + TypeScript + Vite (`frontend/src/`) | **VERIFIED** (Live API connection) |
-| **Automated Testing Suite** | Pytest + Vitest (`backend/tests/`, `frontend/tests/`) | **VERIFIED** (22/22 tests passing) |
-| **Requirements Traceability** | RTM (`docs/requirements-traceability.md`) | **VERIFIED** (R01–R21 mapped) |
-
-> [!IMPORTANT]
-> **Privacy Release Readiness**: In Phase 1, the differential privacy engine and official accounting specification have not yet been integrated. In accordance with the system's fail-closed security policy, all privacy releases remain **strictly disabled**.
-
----
-
-## 3. Repository Architecture
-
+### Core Architectural Pipeline:
 ```
-HOTFIX/
-├── config/
-│   ├── app.yaml               # Validated application settings (host, port, CORS, logging)
-│   └── spec.yaml              # Track 4 accounting spec placeholder (status: NOT_CONFIGURED)
-├── backend/
-│   ├── app/
-│   │   ├── __init__.py
-│   │   ├── main.py            # FastAPI application factory, middleware, exception handlers
-│   │   ├── core/
-│   │   │   ├── __init__.py
-│   │   │   └── config.py      # Pydantic v2 settings validation & fail-closed release invariants
-│   │   ├── api/
-│   │   │   ├── __init__.py
-│   │   │   └── routes/
-│   │   │       ├── __init__.py
-│   │   │       └── system.py  # /health, /ready, /api/system/status routes
-│   │   └── schemas/
-│   │       ├── __init__.py
-│   │       └── system.py      # Pydantic models for status, health, and error contracts
-│   ├── tests/
-│   │   ├── test_health.py     # Tests B01, B02
-│   │   ├── test_readiness.py  # Test B03
-│   │   ├── test_system_status.py # Tests B04, B10, B11
-│   │   ├── test_config.py     # Tests B05, B06, B07, B08
-│   │   ├── test_error_safety.py  # Test B09
-│   │   ├── test_regression.py # Test B12
-│   │   └── fixtures/
-│   │       └── sample_dataset_stub.json # Isolated non-official unit test fixture
-│   ├── pyproject.toml
-│   └── .env.example
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Header.tsx
-│   │   │   ├── StatusBanner.tsx
-│   │   │   ├── CapabilityMatrix.tsx
-│   │   │   └── ConnectionAlert.tsx
-│   │   ├── services/
-│   │   │   └── api.ts         # Centralized API service with timeout & schema validation
-│   │   ├── types/
-│   │   │   └── system.ts      # TypeScript interfaces
-│   │   ├── App.tsx
-│   │   ├── main.tsx
-│   │   └── index.css
-│   ├── tests/
-│   │   └── App.test.tsx       # Vitest + React Testing Library component tests
-│   ├── package.json
-│   ├── tsconfig.json
-│   └── vite.config.ts
-├── docs/
-│   ├── phase1/
-│   │   └── workspace-audit.md
-│   ├── architecture.md
-│   ├── requirements-traceability.md
-│   ├── data-inventory.md
-│   ├── api-contracts.md
-│   ├── testing-strategy.md
-│   ├── assumptions-and-limitations.md
-│   └── SPEC_CONFORMANCE.md
-├── scripts/
-│   ├── run_backend.ps1        # Script to launch FastAPI server
-│   ├── run_frontend.ps1       # Script to launch Vite dev server
-│   └── test_all.ps1           # Comprehensive automated test runner
-├── .gitignore
-├── .env.example
-├── README.md
-└── PHASE_STATUS.md
+LOGIN (PBKDF2-HMAC-SHA256, 5-Attempt Lockout)
+  ↓
+AUTHORIZATION & SCOPING (Analyst / Data Steward / Auditor)
+  ↓
+DATASET SELECTION (Synthetic Health / Financial Records, 500 rows each)
+  ↓
+QUERY VALIDATION (COUNT DISTINCT Privacy Unit, Allowlist Grammar, Sensitivity Δf = 1.0)
+  ↓
+PRE-RELEASE PRIVACY POLICY CHECK (Sensitive Field Redaction, Parameter Bounds)
+  ↓
+BUDGET RESERVATION (SQLite Atomic Transaction BEGIN IMMEDIATE, Cap ε ≤ 5.0, Micro-epsilon integer math)
+  ↓
+DIFFERENTIAL PRIVACY MECHANISM (IBM diffprivlib Laplace with bounded CSPRNG fallback)
+  ↓
+COMMITTED ACCOUNTING & CRYPTOGRAPHIC AUDIT RECORD (SHA-256 Hash Chain + Ed25519 Gateway Keypair Signature)
+  ↓
+VERIFIABLE PRIVACY RECEIPT (Self-contained JSON receipt returned to client)
 ```
 
 ---
 
-## 4. Setup & Running Instructions
+## 2. Key MVP Capabilities
+
+1. **Zero-Trust Authentication & Lockout**: PBKDF2-HMAC-SHA256 password hashing with 100,000 iterations. Automatically triggers a 15-minute temporary lockout after 5 consecutive failed login attempts (HTTP 429).
+2. **Restricted Query Engine**: Allowlist grammar strictly permitting `COUNT DISTINCT` over approved categorical fields (`diagnosis_category`, `admission_type`, `age_group` for health; `transaction_type`, `risk_band`, `account_type` for financial). Arbitrary SQL, individual row filtering, and direct identifier queries (SSN, MRN) are rejected with HTTP 400.
+3. **Distinct Privacy Unit Sensitivity**: Queries compute distinct privacy units (`patient_id` or `customer_id`), mathematically guaranteeing global sensitivity $\Delta f = 1.0$ even if an individual has multiple transaction or clinical encounter rows.
+4. **Differential Privacy Noise Mechanism**: Real Laplace mechanism via IBM `diffprivlib` with bounded CSPRNG fallback. Releases noisy non-negative integers ($\ge 0$). Raw counts are never returned to the analyst.
+5. **Shared Privacy Budget Ledger**: Shared SQLite budget ledger enforcing a strict dataset cap ($\epsilon \le 5.0$). Uses exact integer micro-epsilon math ($1.0 = 1,000,000 \mu\epsilon$) to prevent floating-point drift. Enforces concurrency safety via atomic `BEGIN IMMEDIATE` transactions.
+6. **Repeated-Query Caching**: Submitting an identical query with the same $\epsilon$ reuses the previous release at **0 budget cost**, preventing budget drain and noise-averaging attacks.
+7. **Verifiable Privacy Receipts**: Every release produces a tamper-evident receipt containing query description, fingerprint, mechanism, $\epsilon$ spent, cumulative $\epsilon$, remaining budget, policy status, SHA-256 audit entry hash, and an **Ed25519 digital signature**.
+8. **Cryptographic Audit Ledger**: Append-only SHA-256 hash-chained log digitally signed by the gateway authority keypair. Any tampering or hash pointer breakage is detected immediately.
+9. **Empirical Utility Benchmark**: Automated empirical test suite running 50 trials per $\epsilon \in \{0.1, 0.2, 0.5, 1.0\}$, verifying the theoretical inverse relationship between $\epsilon$ and noise error (MAE & RMSE).
+10. **Modern React Frontend**: Clean, responsive, dark-mode cybersecurity dashboard with 4 comprehensive views:
+    * **View A**: Authentication & Rate-Limit Lockout Feedback.
+    * **View B**: Analytics Query Builder, Sensitivity Pre-flight, and Real-time Budget Progress Bar.
+    * **View C**: Cryptographic Privacy Receipt Inspector with JSON copy/download.
+    * **View D**: Audit Ledger Cryptographic Verification & Empirical Utility Benchmark Report.
+
+---
+
+## 3. Quick Start Guide (Windows PowerShell)
 
 ### Prerequisites
-* **Python**: 3.11 or newer
-* **Node.js**: v20 or newer (`npm` 10+)
-* **PowerShell** (Windows) or **Bash** (macOS/Linux)
+* Python 3.11+
+* Node.js 18+ and npm
+
+### 1. Run Complete Automated Test Suite (Recommended First Step)
+To verify all 44 backend tests, the empirical utility benchmark, TypeScript validation, and 10 frontend tests:
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/test_all.ps1
+```
+
+### 2. Start Backend API Gateway
+Open a PowerShell terminal and run:
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/run_backend.ps1
+```
+*Backend will start on `http://127.0.0.1:8000`.*
+* Interactive API Documentation (Swagger): `http://127.0.0.1:8000/docs`
+* Health Probe: `http://127.0.0.1:8000/health`
+* Readiness Probe: `http://127.0.0.1:8000/ready`
+* System Status: `http://127.0.0.1:8000/api/system/status`
+
+### 3. Start Frontend Dashboard
+Open a second PowerShell terminal and run:
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/run_frontend.ps1
+```
+*Frontend will launch on `http://localhost:5173`.*
 
 ---
 
-### Step 1: Environment Configuration
-Copy `.env.example` to create your local `.env`:
-```powershell
-Copy-Item .env.example .env
-```
+## 4. Default Seeded Credentials
+
+| Username | Password | Role | Description |
+| :--- | :--- | :--- | :--- |
+| `analyst_user` | `AnalystPass2026!` | `analyst` | Can submit approved analytical queries, inspect receipts, and view utility benchmarks. |
+| `steward_user` | `StewardPass2026!` | `data_steward` | Can monitor dataset budgets, sensitivity bounds, and policy rules. |
+| `auditor_user` | `AuditorPass2026!` | `auditor` | Can run cryptographic audit ledger verification and tamper-detection checks. |
+
+*(All users have 5-attempt rate-limiting with a 15-minute temporary lockout).*
 
 ---
 
-### Step 2: Start the Backend Gateway
+## 5. Live Demonstration Script (3-Minute Hackathon Demo)
 
-**Using the convenience script:**
-```powershell
-.\scripts\run_backend.ps1
-```
-
-**Or directly from the terminal:**
-```powershell
-$env:PYTHONPATH = "backend"
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
-```
-
-The backend starts at `http://127.0.0.1:8000`. You can verify:
-* **Liveness**: `http://127.0.0.1:8000/health`
-* **Readiness**: `http://127.0.0.1:8000/ready`
-* **System Status**: `http://127.0.0.1:8000/api/system/status`
-* **OpenAPI Docs**: `http://127.0.0.1:8000/docs`
-
----
-
-### Step 3: Start the Frontend Interface
-
-**Using the convenience script:**
-```powershell
-.\scripts\run_frontend.ps1
-```
-
-**Or directly from the terminal:**
-```powershell
-cd frontend
-npm run dev
-```
-
-Open your browser to `http://localhost:5173`. The dashboard immediately connects to the backend and displays the verified system status.
+1. **Step 1 — Authenticated Login & Rate Limiting**:
+   * Navigate to `http://localhost:5173`.
+   * Click quick-fill button **Analyst** (`analyst_user` / `AnalystPass2026!`).
+   * Click **Sign In to Gateway**.
+   *(To demonstrate lockout: enter 5 incorrect passwords to see the 15-minute temporary lockout banner).*
+2. **Step 2 — Analytical Query & Differential Privacy Release**:
+   * On the **Analytics Dashboard**, select the **Health** dataset (500 records, privacy unit: `patient_id`).
+   * Note the **Shared Privacy Budget Bar** showing 5.00 $\epsilon$ remaining.
+   * Under Query Specification, select `diagnosis_category = cardiovascular` and $\epsilon = 0.5$.
+   * Click **Validate & Preview**: Observe pre-flight gate passing with bounded sensitivity $\Delta f = 1.0$.
+   * Click **Execute Differential Privacy Release**:
+     * Observe the committed noisy count (e.g., 104 vs exact concealed 100).
+     * Observe budget deduction: Spent: 0.50 $\epsilon$, Remaining: 4.50 $\epsilon$.
+3. **Step 3 — Zero-Cost Query Caching**:
+   * Click **Execute Differential Privacy Release** again with the exact same parameters.
+   * Observe the **⚡ CACHE HIT (0.00 ε SPENT)** badge! No budget is deducted, preventing noise-averaging attacks.
+4. **Step 4 — Verifiable Privacy Receipt**:
+   * Click **📜 View Cryptographic Privacy Receipt**.
+   * Observe the self-contained receipt displaying query description, $\epsilon$ expenditure, SHA-256 audit entry hash pointer, and authentic **Ed25519 digital signature**.
+5. **Step 5 — Cryptographic Audit Verification & Empirical Utility**:
+   * Click the **🛡️ Cryptographic Audit & Utility** tab in the header.
+   * Click **🔄 Re-verify Audit Ledger**: Observe **AUDIT CHAIN INTEGRITY VERIFIED** across all entries using SHA-256 hash chaining and Ed25519 signature checks.
+   * Scroll to the **Empirical Privacy-Utility Trade-off Benchmark** table to demonstrate empirical proof of Laplace noise scaling across 50 trials per $\epsilon$.
 
 ---
 
-## 5. Automated Test Execution
+## 6. Official Track 4 Transparency Disclosure
 
-Execute the unified test suite across backend and frontend:
-
-```powershell
-.\scripts\test_all.ps1
-```
-
-### Individual Test Commands:
-
-* **Backend Unit & API Tests (16 tests)**:
-  ```powershell
-  cd backend
-  python -m pytest tests -v
-  ```
-
-* **Frontend Unit & Component Tests (6 tests)**:
-  ```powershell
-  cd frontend
-  npm test
-  ```
-
-* **Frontend TypeScript Validation**:
-  ```powershell
-  cd frontend
-  npm run typecheck
-  ```
-
-* **Frontend Production Build**:
-  ```powershell
-  cd frontend
-  npm run build
-  ```
-
----
-
-## 6. Phase 1 Acceptance Gate Conformance
-
-All 15 mandatory Phase 1 acceptance gates have been satisfied and empirically verified:
-
-* [x] **GATE 01**: Workspace audit completed (`docs/phase1/workspace-audit.md`).
-* [x] **GATE 02**: Requirements traceability matrix created (R01–R21 mapped).
-* [x] **GATE 03**: System architecture and trust boundaries documented (`docs/architecture.md`).
-* [x] **GATE 04**: Backend initializes and `GET /health` passes.
-* [x] **GATE 05**: Frontend connects and displays live status from backend.
-* [x] **GATE 06**: Application configuration is validated by Pydantic.
-* [x] **GATE 07**: Privacy releases remain disabled (fail-closed enforced).
-* [x] **GATE 08**: Missing or invalid official spec cannot silently enable releases.
-* [x] **GATE 09**: Backend unit and API tests pass (16/16).
-* [x] **GATE 10**: Frontend tests (6/6) and production build pass.
-* [x] **GATE 11**: Static TypeScript and lint checks pass (0 errors).
-* [x] **GATE 12**: Regression release guard route `/api/v1/query/release` verified (HTTP 403).
-* [x] **GATE 13**: Startup and run commands verified empirically in local terminal.
-* [x] **GATE 14**: No mock or simulated code presented as production functionality.
-* [x] **GATE 15**: Test execution report records exact commands, exit codes, and evidence.
-
----
-
-## 7. Next Steps: Phase 2 Handoff
-
-Phase 2 will implement:
-1. User Authentication and 5-attempt lockout (R01, R02).
-2. Role-Based Access Control for Analysts and Administrators (R03).
-3. Ingestion and verification of official synthetic health and financial datasets (R04).
-4. PII and quasi-identifier classification (R05).
-5. Restricted analytical query parser blocking microdata extraction (R07).
-
-See `PHASE_STATUS.md` for full handoff details.
+In strict adherence to our anti-fakery and honest engineering contract:
+* **Official Accounting Specification**: `DEMO ACCOUNTING ACTIVE — OFFICIAL CONFORMANCE NOT VERIFIED` (Demonstration accounting uses integer micro-epsilon arithmetic on SQLite; pending official Track 4 specification).
+* **Official Empirical Risk Evaluation**: `OFFICIAL EMPIRICAL RISK EVALUATION NOT CONFIGURED` (No synthetic attack scores are fabricated; pending official Track 4 evaluation harness).

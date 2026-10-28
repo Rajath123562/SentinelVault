@@ -1,6 +1,7 @@
 """Main FastAPI application entrypoint for HOTFIX Privacy-by-Design Gateway."""
 
 import logging
+from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from fastapi import FastAPI, Request, status
 from fastapi.exceptions import RequestValidationError
@@ -9,10 +10,23 @@ from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.core.config import get_settings
+from app.db.connection import init_database
 from app.api.routes.system import router as system_router
+from app.api.routes.mvp import router as mvp_router
 from app.schemas.system import ErrorResponse
 
 logger = logging.getLogger("hotfix")
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Lifecycle hook: initialize SQLite schema and seed demo state on startup."""
+    try:
+        init_database()
+        logger.info("Database and demonstration seed data successfully initialized.")
+    except Exception as e:
+        logger.error(f"Failed to initialize database: {e}", exc_info=True)
+    yield
 
 
 def create_application() -> FastAPI:
@@ -32,6 +46,7 @@ def create_application() -> FastAPI:
         description="Privacy-by-Design Analytics Gateway for sensitive health and financial records.",
         docs_url="/docs",
         redoc_url="/redoc",
+        lifespan=lifespan,
     )
 
     # Configure CORS for frontend access
@@ -69,7 +84,7 @@ def create_application() -> FastAPI:
             ).model_dump(mode="json")
         )
 
-    # Catch-all exception handler enforcing safe, non-leaking responses (Test B09)
+    # Catch-all exception handler enforcing safe, non-leaking responses
     @app.exception_handler(Exception)
     async def unhandled_exception_handler(request: Request, exc: Exception):
         logger.error("Unhandled internal server exception", exc_info=True)
@@ -83,7 +98,7 @@ def create_application() -> FastAPI:
             ).model_dump(mode="json")
         )
 
-    # Fail-closed guard on any query release route during Phase 1
+    # Legacy raw-release guard route preserved from Phase 1 (Test B12)
     @app.api_route(
         "/api/v1/query/release",
         methods=["GET", "POST"],
@@ -92,22 +107,22 @@ def create_application() -> FastAPI:
         include_in_schema=False
     )
     async def blocked_release_route():
-        """Fail-closed guard route: forbids data release while privacy controls are incomplete."""
+        """Fail-closed guard route: forbids unmediated data release."""
         return JSONResponse(
             status_code=status.HTTP_403_FORBIDDEN,
             content=ErrorResponse(
                 error="Privacy Release Disabled",
-                detail="Privacy releases are strictly disabled in Phase 1. The differential privacy engine and official accounting specification have not been integrated.",
+                detail="Unmediated raw query releases are strictly disabled. Approved queries must be submitted via /api/queries/run.",
                 code="PRIVACY_RELEASE_DISABLED",
                 timestamp=datetime.now(timezone.utc)
             ).model_dump(mode="json")
         )
 
-    # Mount system routes
+    # Mount routers
     app.include_router(system_router)
+    app.include_router(mvp_router)
 
     return app
 
 
 app = create_application()
-

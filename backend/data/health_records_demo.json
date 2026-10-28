@@ -1,0 +1,4036 @@
+{
+  "dataset_id": "health",
+  "title": "Synthetic Health Records (Demo Fixture)",
+  "version": "1.0.0-demo",
+  "is_official_dataset": false,
+  "privacy_unit": "patient_id",
+  "description": "Simulated hospital patient clinical encounter records for demonstration and utility benchmarking.",
+  "approved_fields": {
+    "diagnosis_category": [
+      "cardiovascular",
+      "respiratory",
+      "endocrine",
+      "oncology",
+      "neurological"
+    ],
+    "admission_type": [
+      "emergency",
+      "elective",
+      "urgent"
+    ],
+    "age_group": [
+      "18-35",
+      "36-50",
+      "51-65",
+      "65+"
+    ],
+    "discharge_status": [
+      "routine",
+      "transferred",
+      "rehabilitation"
+    ]
+  },
+  "total_records": 500,
+  "records": [
+    {
+      "record_id": "HREC-00001",
+      "patient_id": "P-0328",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00002",
+      "patient_id": "P-0115",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00003",
+      "patient_id": "P-0280",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00004",
+      "patient_id": "P-0016",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00005",
+      "patient_id": "P-0309",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00006",
+      "patient_id": "P-0333",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00007",
+      "patient_id": "P-0302",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00008",
+      "patient_id": "P-0217",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00009",
+      "patient_id": "P-0173",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00010",
+      "patient_id": "P-0184",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00011",
+      "patient_id": "P-0236",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00012",
+      "patient_id": "P-0283",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00013",
+      "patient_id": "P-0099",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00014",
+      "patient_id": "P-0041",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00015",
+      "patient_id": "P-0233",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00016",
+      "patient_id": "P-0108",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00017",
+      "patient_id": "P-0326",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00018",
+      "patient_id": "P-0237",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00019",
+      "patient_id": "P-0167",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00020",
+      "patient_id": "P-0206",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00021",
+      "patient_id": "P-0162",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00022",
+      "patient_id": "P-0330",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00023",
+      "patient_id": "P-0127",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00024",
+      "patient_id": "P-0300",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00025",
+      "patient_id": "P-0113",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00026",
+      "patient_id": "P-0025",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00027",
+      "patient_id": "P-0217",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00028",
+      "patient_id": "P-0306",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00029",
+      "patient_id": "P-0006",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00030",
+      "patient_id": "P-0175",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00031",
+      "patient_id": "P-0233",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00032",
+      "patient_id": "P-0092",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00033",
+      "patient_id": "P-0260",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00034",
+      "patient_id": "P-0083",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00035",
+      "patient_id": "P-0166",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00036",
+      "patient_id": "P-0158",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00037",
+      "patient_id": "P-0041",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00038",
+      "patient_id": "P-0273",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00039",
+      "patient_id": "P-0085",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00040",
+      "patient_id": "P-0277",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00041",
+      "patient_id": "P-0344",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00042",
+      "patient_id": "P-0127",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00043",
+      "patient_id": "P-0302",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00044",
+      "patient_id": "P-0037",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00045",
+      "patient_id": "P-0170",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00046",
+      "patient_id": "P-0343",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00047",
+      "patient_id": "P-0293",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00048",
+      "patient_id": "P-0209",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00049",
+      "patient_id": "P-0221",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00050",
+      "patient_id": "P-0028",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00051",
+      "patient_id": "P-0174",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00052",
+      "patient_id": "P-0275",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00053",
+      "patient_id": "P-0143",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00054",
+      "patient_id": "P-0282",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00055",
+      "patient_id": "P-0122",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00056",
+      "patient_id": "P-0110",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00057",
+      "patient_id": "P-0002",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00058",
+      "patient_id": "P-0217",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00059",
+      "patient_id": "P-0098",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00060",
+      "patient_id": "P-0278",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00061",
+      "patient_id": "P-0026",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00062",
+      "patient_id": "P-0261",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00063",
+      "patient_id": "P-0035",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00064",
+      "patient_id": "P-0127",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00065",
+      "patient_id": "P-0042",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00066",
+      "patient_id": "P-0105",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00067",
+      "patient_id": "P-0068",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00068",
+      "patient_id": "P-0005",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00069",
+      "patient_id": "P-0276",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00070",
+      "patient_id": "P-0179",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00071",
+      "patient_id": "P-0081",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00072",
+      "patient_id": "P-0335",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00073",
+      "patient_id": "P-0054",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00074",
+      "patient_id": "P-0284",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00075",
+      "patient_id": "P-0108",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00076",
+      "patient_id": "P-0251",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00077",
+      "patient_id": "P-0217",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00078",
+      "patient_id": "P-0067",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00079",
+      "patient_id": "P-0219",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00080",
+      "patient_id": "P-0077",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00081",
+      "patient_id": "P-0283",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00082",
+      "patient_id": "P-0158",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00083",
+      "patient_id": "P-0350",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00084",
+      "patient_id": "P-0287",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00085",
+      "patient_id": "P-0084",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00086",
+      "patient_id": "P-0171",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00087",
+      "patient_id": "P-0082",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00088",
+      "patient_id": "P-0114",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00089",
+      "patient_id": "P-0117",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00090",
+      "patient_id": "P-0169",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00091",
+      "patient_id": "P-0329",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00092",
+      "patient_id": "P-0060",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00093",
+      "patient_id": "P-0056",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00094",
+      "patient_id": "P-0161",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00095",
+      "patient_id": "P-0296",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00096",
+      "patient_id": "P-0224",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00097",
+      "patient_id": "P-0221",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00098",
+      "patient_id": "P-0161",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00099",
+      "patient_id": "P-0159",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00100",
+      "patient_id": "P-0152",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00101",
+      "patient_id": "P-0341",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00102",
+      "patient_id": "P-0292",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00103",
+      "patient_id": "P-0147",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00104",
+      "patient_id": "P-0227",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00105",
+      "patient_id": "P-0243",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00106",
+      "patient_id": "P-0264",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00107",
+      "patient_id": "P-0345",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00108",
+      "patient_id": "P-0013",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00109",
+      "patient_id": "P-0038",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00110",
+      "patient_id": "P-0197",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00111",
+      "patient_id": "P-0336",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00112",
+      "patient_id": "P-0091",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00113",
+      "patient_id": "P-0128",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00114",
+      "patient_id": "P-0342",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00115",
+      "patient_id": "P-0314",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00116",
+      "patient_id": "P-0244",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00117",
+      "patient_id": "P-0142",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00118",
+      "patient_id": "P-0226",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00119",
+      "patient_id": "P-0140",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00120",
+      "patient_id": "P-0078",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00121",
+      "patient_id": "P-0110",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00122",
+      "patient_id": "P-0278",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00123",
+      "patient_id": "P-0216",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00124",
+      "patient_id": "P-0195",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00125",
+      "patient_id": "P-0200",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00126",
+      "patient_id": "P-0113",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00127",
+      "patient_id": "P-0200",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00128",
+      "patient_id": "P-0085",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00129",
+      "patient_id": "P-0304",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00130",
+      "patient_id": "P-0330",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00131",
+      "patient_id": "P-0026",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00132",
+      "patient_id": "P-0233",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00133",
+      "patient_id": "P-0216",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00134",
+      "patient_id": "P-0277",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00135",
+      "patient_id": "P-0036",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00136",
+      "patient_id": "P-0011",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00137",
+      "patient_id": "P-0243",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00138",
+      "patient_id": "P-0132",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00139",
+      "patient_id": "P-0160",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00140",
+      "patient_id": "P-0295",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00141",
+      "patient_id": "P-0304",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00142",
+      "patient_id": "P-0308",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00143",
+      "patient_id": "P-0273",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00144",
+      "patient_id": "P-0260",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00145",
+      "patient_id": "P-0055",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00146",
+      "patient_id": "P-0079",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00147",
+      "patient_id": "P-0276",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00148",
+      "patient_id": "P-0304",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00149",
+      "patient_id": "P-0143",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00150",
+      "patient_id": "P-0313",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00151",
+      "patient_id": "P-0167",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00152",
+      "patient_id": "P-0133",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00153",
+      "patient_id": "P-0006",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00154",
+      "patient_id": "P-0209",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00155",
+      "patient_id": "P-0244",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00156",
+      "patient_id": "P-0151",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00157",
+      "patient_id": "P-0340",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00158",
+      "patient_id": "P-0272",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00159",
+      "patient_id": "P-0233",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00160",
+      "patient_id": "P-0062",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00161",
+      "patient_id": "P-0275",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00162",
+      "patient_id": "P-0248",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00163",
+      "patient_id": "P-0100",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00164",
+      "patient_id": "P-0155",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00165",
+      "patient_id": "P-0024",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00166",
+      "patient_id": "P-0065",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00167",
+      "patient_id": "P-0146",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00168",
+      "patient_id": "P-0095",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00169",
+      "patient_id": "P-0034",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00170",
+      "patient_id": "P-0323",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00171",
+      "patient_id": "P-0156",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00172",
+      "patient_id": "P-0214",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00173",
+      "patient_id": "P-0195",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00174",
+      "patient_id": "P-0220",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00175",
+      "patient_id": "P-0051",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00176",
+      "patient_id": "P-0339",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00177",
+      "patient_id": "P-0283",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00178",
+      "patient_id": "P-0231",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00179",
+      "patient_id": "P-0119",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00180",
+      "patient_id": "P-0233",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00181",
+      "patient_id": "P-0321",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00182",
+      "patient_id": "P-0059",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00183",
+      "patient_id": "P-0073",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00184",
+      "patient_id": "P-0305",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00185",
+      "patient_id": "P-0240",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00186",
+      "patient_id": "P-0257",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00187",
+      "patient_id": "P-0307",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00188",
+      "patient_id": "P-0129",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00189",
+      "patient_id": "P-0295",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00190",
+      "patient_id": "P-0021",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00191",
+      "patient_id": "P-0093",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00192",
+      "patient_id": "P-0241",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00193",
+      "patient_id": "P-0344",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00194",
+      "patient_id": "P-0254",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00195",
+      "patient_id": "P-0019",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00196",
+      "patient_id": "P-0166",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00197",
+      "patient_id": "P-0278",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00198",
+      "patient_id": "P-0266",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00199",
+      "patient_id": "P-0227",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00200",
+      "patient_id": "P-0068",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00201",
+      "patient_id": "P-0015",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00202",
+      "patient_id": "P-0283",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00203",
+      "patient_id": "P-0116",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00204",
+      "patient_id": "P-0079",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00205",
+      "patient_id": "P-0140",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00206",
+      "patient_id": "P-0234",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00207",
+      "patient_id": "P-0307",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00208",
+      "patient_id": "P-0142",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00209",
+      "patient_id": "P-0145",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00210",
+      "patient_id": "P-0229",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00211",
+      "patient_id": "P-0283",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00212",
+      "patient_id": "P-0097",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00213",
+      "patient_id": "P-0211",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00214",
+      "patient_id": "P-0196",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00215",
+      "patient_id": "P-0019",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00216",
+      "patient_id": "P-0226",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00217",
+      "patient_id": "P-0074",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00218",
+      "patient_id": "P-0241",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00219",
+      "patient_id": "P-0042",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00220",
+      "patient_id": "P-0321",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00221",
+      "patient_id": "P-0036",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00222",
+      "patient_id": "P-0047",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00223",
+      "patient_id": "P-0086",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00224",
+      "patient_id": "P-0029",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00225",
+      "patient_id": "P-0075",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00226",
+      "patient_id": "P-0350",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00227",
+      "patient_id": "P-0313",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00228",
+      "patient_id": "P-0299",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00229",
+      "patient_id": "P-0131",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00230",
+      "patient_id": "P-0148",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00231",
+      "patient_id": "P-0177",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00232",
+      "patient_id": "P-0129",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00233",
+      "patient_id": "P-0248",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00234",
+      "patient_id": "P-0184",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00235",
+      "patient_id": "P-0338",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00236",
+      "patient_id": "P-0026",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00237",
+      "patient_id": "P-0118",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00238",
+      "patient_id": "P-0098",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00239",
+      "patient_id": "P-0050",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00240",
+      "patient_id": "P-0297",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00241",
+      "patient_id": "P-0152",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00242",
+      "patient_id": "P-0103",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00243",
+      "patient_id": "P-0257",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00244",
+      "patient_id": "P-0152",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00245",
+      "patient_id": "P-0073",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00246",
+      "patient_id": "P-0188",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00247",
+      "patient_id": "P-0275",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00248",
+      "patient_id": "P-0345",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00249",
+      "patient_id": "P-0191",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00250",
+      "patient_id": "P-0013",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00251",
+      "patient_id": "P-0114",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00252",
+      "patient_id": "P-0155",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00253",
+      "patient_id": "P-0020",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00254",
+      "patient_id": "P-0121",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00255",
+      "patient_id": "P-0190",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00256",
+      "patient_id": "P-0336",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00257",
+      "patient_id": "P-0017",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00258",
+      "patient_id": "P-0121",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00259",
+      "patient_id": "P-0331",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00260",
+      "patient_id": "P-0098",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00261",
+      "patient_id": "P-0109",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00262",
+      "patient_id": "P-0125",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00263",
+      "patient_id": "P-0284",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00264",
+      "patient_id": "P-0169",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00265",
+      "patient_id": "P-0075",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00266",
+      "patient_id": "P-0057",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00267",
+      "patient_id": "P-0122",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00268",
+      "patient_id": "P-0136",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00269",
+      "patient_id": "P-0059",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00270",
+      "patient_id": "P-0263",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00271",
+      "patient_id": "P-0114",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00272",
+      "patient_id": "P-0330",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00273",
+      "patient_id": "P-0219",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00274",
+      "patient_id": "P-0042",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00275",
+      "patient_id": "P-0065",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00276",
+      "patient_id": "P-0306",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00277",
+      "patient_id": "P-0310",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00278",
+      "patient_id": "P-0334",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00279",
+      "patient_id": "P-0232",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00280",
+      "patient_id": "P-0205",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00281",
+      "patient_id": "P-0219",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00282",
+      "patient_id": "P-0079",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00283",
+      "patient_id": "P-0048",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00284",
+      "patient_id": "P-0285",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00285",
+      "patient_id": "P-0063",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00286",
+      "patient_id": "P-0027",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00287",
+      "patient_id": "P-0054",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00288",
+      "patient_id": "P-0337",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00289",
+      "patient_id": "P-0285",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00290",
+      "patient_id": "P-0116",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00291",
+      "patient_id": "P-0337",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00292",
+      "patient_id": "P-0159",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00293",
+      "patient_id": "P-0074",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00294",
+      "patient_id": "P-0073",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00295",
+      "patient_id": "P-0215",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00296",
+      "patient_id": "P-0160",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00297",
+      "patient_id": "P-0080",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00298",
+      "patient_id": "P-0042",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00299",
+      "patient_id": "P-0311",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00300",
+      "patient_id": "P-0263",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00301",
+      "patient_id": "P-0146",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00302",
+      "patient_id": "P-0113",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00303",
+      "patient_id": "P-0105",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00304",
+      "patient_id": "P-0149",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00305",
+      "patient_id": "P-0221",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00306",
+      "patient_id": "P-0118",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00307",
+      "patient_id": "P-0204",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00308",
+      "patient_id": "P-0040",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00309",
+      "patient_id": "P-0208",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00310",
+      "patient_id": "P-0011",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00311",
+      "patient_id": "P-0186",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00312",
+      "patient_id": "P-0224",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00313",
+      "patient_id": "P-0159",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00314",
+      "patient_id": "P-0040",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00315",
+      "patient_id": "P-0262",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00316",
+      "patient_id": "P-0331",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00317",
+      "patient_id": "P-0132",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00318",
+      "patient_id": "P-0039",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00319",
+      "patient_id": "P-0289",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00320",
+      "patient_id": "P-0162",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00321",
+      "patient_id": "P-0227",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00322",
+      "patient_id": "P-0260",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00323",
+      "patient_id": "P-0020",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00324",
+      "patient_id": "P-0331",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00325",
+      "patient_id": "P-0298",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00326",
+      "patient_id": "P-0293",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00327",
+      "patient_id": "P-0078",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00328",
+      "patient_id": "P-0044",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00329",
+      "patient_id": "P-0127",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00330",
+      "patient_id": "P-0191",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00331",
+      "patient_id": "P-0348",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00332",
+      "patient_id": "P-0169",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00333",
+      "patient_id": "P-0130",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00334",
+      "patient_id": "P-0299",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00335",
+      "patient_id": "P-0340",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00336",
+      "patient_id": "P-0287",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00337",
+      "patient_id": "P-0344",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00338",
+      "patient_id": "P-0186",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00339",
+      "patient_id": "P-0110",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00340",
+      "patient_id": "P-0071",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00341",
+      "patient_id": "P-0260",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00342",
+      "patient_id": "P-0173",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00343",
+      "patient_id": "P-0084",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00344",
+      "patient_id": "P-0225",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00345",
+      "patient_id": "P-0122",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00346",
+      "patient_id": "P-0230",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00347",
+      "patient_id": "P-0241",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00348",
+      "patient_id": "P-0145",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00349",
+      "patient_id": "P-0103",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00350",
+      "patient_id": "P-0329",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00351",
+      "patient_id": "P-0265",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00352",
+      "patient_id": "P-0140",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00353",
+      "patient_id": "P-0047",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00354",
+      "patient_id": "P-0213",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00355",
+      "patient_id": "P-0198",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00356",
+      "patient_id": "P-0164",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00357",
+      "patient_id": "P-0071",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00358",
+      "patient_id": "P-0072",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00359",
+      "patient_id": "P-0010",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00360",
+      "patient_id": "P-0312",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00361",
+      "patient_id": "P-0122",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00362",
+      "patient_id": "P-0215",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00363",
+      "patient_id": "P-0256",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00364",
+      "patient_id": "P-0264",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00365",
+      "patient_id": "P-0220",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00366",
+      "patient_id": "P-0293",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00367",
+      "patient_id": "P-0185",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00368",
+      "patient_id": "P-0241",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00369",
+      "patient_id": "P-0130",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00370",
+      "patient_id": "P-0124",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00371",
+      "patient_id": "P-0023",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00372",
+      "patient_id": "P-0090",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00373",
+      "patient_id": "P-0094",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00374",
+      "patient_id": "P-0151",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00375",
+      "patient_id": "P-0162",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00376",
+      "patient_id": "P-0243",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00377",
+      "patient_id": "P-0183",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00378",
+      "patient_id": "P-0064",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00379",
+      "patient_id": "P-0226",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00380",
+      "patient_id": "P-0255",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00381",
+      "patient_id": "P-0218",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00382",
+      "patient_id": "P-0151",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00383",
+      "patient_id": "P-0339",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00384",
+      "patient_id": "P-0219",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00385",
+      "patient_id": "P-0229",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00386",
+      "patient_id": "P-0223",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00387",
+      "patient_id": "P-0344",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00388",
+      "patient_id": "P-0074",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00389",
+      "patient_id": "P-0065",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00390",
+      "patient_id": "P-0197",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00391",
+      "patient_id": "P-0231",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00392",
+      "patient_id": "P-0294",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00393",
+      "patient_id": "P-0161",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00394",
+      "patient_id": "P-0096",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00395",
+      "patient_id": "P-0061",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00396",
+      "patient_id": "P-0314",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00397",
+      "patient_id": "P-0063",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00398",
+      "patient_id": "P-0228",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00399",
+      "patient_id": "P-0178",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00400",
+      "patient_id": "P-0081",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00401",
+      "patient_id": "P-0103",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00402",
+      "patient_id": "P-0185",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00403",
+      "patient_id": "P-0283",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00404",
+      "patient_id": "P-0159",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00405",
+      "patient_id": "P-0211",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00406",
+      "patient_id": "P-0163",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00407",
+      "patient_id": "P-0265",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00408",
+      "patient_id": "P-0222",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00409",
+      "patient_id": "P-0079",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00410",
+      "patient_id": "P-0116",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00411",
+      "patient_id": "P-0129",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00412",
+      "patient_id": "P-0321",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00413",
+      "patient_id": "P-0329",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00414",
+      "patient_id": "P-0338",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00415",
+      "patient_id": "P-0022",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00416",
+      "patient_id": "P-0296",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00417",
+      "patient_id": "P-0214",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00418",
+      "patient_id": "P-0322",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00419",
+      "patient_id": "P-0126",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00420",
+      "patient_id": "P-0031",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00421",
+      "patient_id": "P-0238",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00422",
+      "patient_id": "P-0164",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00423",
+      "patient_id": "P-0264",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00424",
+      "patient_id": "P-0239",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00425",
+      "patient_id": "P-0073",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00426",
+      "patient_id": "P-0316",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00427",
+      "patient_id": "P-0296",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00428",
+      "patient_id": "P-0264",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00429",
+      "patient_id": "P-0012",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00430",
+      "patient_id": "P-0111",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00431",
+      "patient_id": "P-0145",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00432",
+      "patient_id": "P-0275",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00433",
+      "patient_id": "P-0136",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00434",
+      "patient_id": "P-0206",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00435",
+      "patient_id": "P-0284",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00436",
+      "patient_id": "P-0231",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00437",
+      "patient_id": "P-0050",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00438",
+      "patient_id": "P-0188",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00439",
+      "patient_id": "P-0021",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00440",
+      "patient_id": "P-0171",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00441",
+      "patient_id": "P-0311",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00442",
+      "patient_id": "P-0164",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00443",
+      "patient_id": "P-0173",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00444",
+      "patient_id": "P-0289",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00445",
+      "patient_id": "P-0170",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00446",
+      "patient_id": "P-0323",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00447",
+      "patient_id": "P-0336",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00448",
+      "patient_id": "P-0027",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00449",
+      "patient_id": "P-0323",
+      "diagnosis_category": "neurological",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00450",
+      "patient_id": "P-0125",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00451",
+      "patient_id": "P-0010",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00452",
+      "patient_id": "P-0212",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00453",
+      "patient_id": "P-0032",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00454",
+      "patient_id": "P-0167",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00455",
+      "patient_id": "P-0089",
+      "diagnosis_category": "oncology",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00456",
+      "patient_id": "P-0182",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00457",
+      "patient_id": "P-0127",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00458",
+      "patient_id": "P-0153",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00459",
+      "patient_id": "P-0251",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00460",
+      "patient_id": "P-0141",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00461",
+      "patient_id": "P-0177",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00462",
+      "patient_id": "P-0041",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00463",
+      "patient_id": "P-0246",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00464",
+      "patient_id": "P-0140",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00465",
+      "patient_id": "P-0026",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00466",
+      "patient_id": "P-0052",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00467",
+      "patient_id": "P-0349",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00468",
+      "patient_id": "P-0335",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00469",
+      "patient_id": "P-0165",
+      "diagnosis_category": "endocrine",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00470",
+      "patient_id": "P-0334",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00471",
+      "patient_id": "P-0214",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00472",
+      "patient_id": "P-0096",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00473",
+      "patient_id": "P-0291",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00474",
+      "patient_id": "P-0233",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00475",
+      "patient_id": "P-0259",
+      "diagnosis_category": "oncology",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00476",
+      "patient_id": "P-0170",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00477",
+      "patient_id": "P-0132",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00478",
+      "patient_id": "P-0291",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00479",
+      "patient_id": "P-0264",
+      "diagnosis_category": "endocrine",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00480",
+      "patient_id": "P-0049",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00481",
+      "patient_id": "P-0128",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00482",
+      "patient_id": "P-0229",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00483",
+      "patient_id": "P-0294",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00484",
+      "patient_id": "P-0121",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00485",
+      "patient_id": "P-0158",
+      "diagnosis_category": "respiratory",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00486",
+      "patient_id": "P-0061",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "36-50",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00487",
+      "patient_id": "P-0069",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00488",
+      "patient_id": "P-0311",
+      "diagnosis_category": "endocrine",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00489",
+      "patient_id": "P-0341",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00490",
+      "patient_id": "P-0229",
+      "diagnosis_category": "neurological",
+      "admission_type": "urgent",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00491",
+      "patient_id": "P-0289",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "emergency",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00492",
+      "patient_id": "P-0275",
+      "diagnosis_category": "respiratory",
+      "admission_type": "emergency",
+      "age_group": "51-65",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00493",
+      "patient_id": "P-0227",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "36-50",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00494",
+      "patient_id": "P-0299",
+      "diagnosis_category": "oncology",
+      "admission_type": "emergency",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00495",
+      "patient_id": "P-0233",
+      "diagnosis_category": "respiratory",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00496",
+      "patient_id": "P-0289",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "65+",
+      "discharge_status": "rehabilitation"
+    },
+    {
+      "record_id": "HREC-00497",
+      "patient_id": "P-0158",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "51-65",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00498",
+      "patient_id": "P-0112",
+      "diagnosis_category": "neurological",
+      "admission_type": "emergency",
+      "age_group": "18-35",
+      "discharge_status": "transferred"
+    },
+    {
+      "record_id": "HREC-00499",
+      "patient_id": "P-0177",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "urgent",
+      "age_group": "18-35",
+      "discharge_status": "routine"
+    },
+    {
+      "record_id": "HREC-00500",
+      "patient_id": "P-0242",
+      "diagnosis_category": "cardiovascular",
+      "admission_type": "elective",
+      "age_group": "65+",
+      "discharge_status": "routine"
+    }
+  ]
+}

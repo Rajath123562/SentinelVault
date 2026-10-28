@@ -1,4 +1,15 @@
-import { SystemStatusResponse, ReadinessResponse } from '../types/system';
+import { 
+  SystemStatusResponse, 
+  ReadinessResponse,
+  DatasetMetadata,
+  QueryPreviewResponse,
+  QueryRunResponse,
+  BudgetStatusResponse,
+  AuditVerificationResponse,
+  EvaluationStatusResponse,
+  PrivacyReceipt,
+  UserSession
+} from '../types/system';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || '';
 const REQUEST_TIMEOUT_MS = 6000;
@@ -15,18 +26,27 @@ export class ApiError extends Error {
 }
 
 /**
- * Executes a fetch request with timeout protection.
+ * Executes a fetch request with timeout protection and auth header support.
  */
-async function fetchWithTimeout(url: string, timeoutMs: number = REQUEST_TIMEOUT_MS): Promise<Response> {
+async function fetchWithTimeout(
+  url: string,
+  options: RequestInit = {},
+  timeoutMs: number = REQUEST_TIMEOUT_MS
+): Promise<Response> {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
   try {
+    const headers = {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      ...(options.headers || {}),
+    };
+
     const response = await fetch(url, {
+      ...options,
       signal: controller.signal,
-      headers: {
-        Accept: 'application/json',
-      },
+      headers,
     });
     clearTimeout(timeoutId);
     return response;
@@ -62,7 +82,6 @@ export async function getSystemStatus(): Promise<SystemStatusResponse> {
     throw new ApiError('Invalid response: Backend payload is not valid JSON');
   }
 
-  // Type and structure validation
   const typed = data as SystemStatusResponse;
   if (!typed.project_name || typeof typed.privacy_releases_enabled !== 'boolean' || !Array.isArray(typed.capabilities)) {
     throw new ApiError('Invalid schema: Missing required fields in backend status payload');
@@ -83,5 +102,149 @@ export async function getReadiness(): Promise<ReadinessResponse> {
   }
 
   return (await response.json()) as ReadinessResponse;
+}
+
+// -------------------------------------------------------------
+// MVP AUTHENTICATION & SESSION
+// -------------------------------------------------------------
+
+export async function loginUser(username: string, password: string): Promise<UserSession> {
+  const url = `${API_BASE_URL}/api/auth/login`;
+  const response = await fetchWithTimeout(url, {
+    method: 'POST',
+    body: JSON.stringify({ username, password }),
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Login failed', response.status);
+  }
+
+  return {
+    username: data.user_id,
+    role: data.role,
+    token: data.token,
+    expires_at: data.expires_at,
+  };
+}
+
+export async function logoutUser(token: string): Promise<void> {
+  const url = `${API_BASE_URL}/api/auth/logout`;
+  await fetchWithTimeout(url, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}` },
+  });
+}
+
+// -------------------------------------------------------------
+// MVP DATASETS & QUERIES
+// -------------------------------------------------------------
+
+export async function getDatasets(token: string): Promise<DatasetMetadata[]> {
+  const url = `${API_BASE_URL}/api/datasets`;
+  const response = await fetchWithTimeout(url, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Failed to fetch datasets', response.status);
+  }
+  return data;
+}
+
+export async function previewQuery(
+  token: string,
+  payload: { dataset_id: string; field: string; operator: string; value: string; epsilon: number }
+): Promise<QueryPreviewResponse> {
+  const url = `${API_BASE_URL}/api/queries/preview`;
+  const response = await fetchWithTimeout(url, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}` },
+    body: JSON.stringify(payload),
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Query preview rejected', response.status);
+  }
+  return data;
+}
+
+export async function runQuery(
+  token: string,
+  payload: {
+    dataset_id: string;
+    field: string;
+    operator: string;
+    value: string;
+    epsilon: number;
+    idempotency_key?: string;
+  }
+): Promise<QueryRunResponse> {
+  const url = `${API_BASE_URL}/api/queries/run`;
+  const response = await fetchWithTimeout(url, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}` },
+    body: JSON.stringify(payload),
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Differential privacy query rejected', response.status);
+  }
+  return data;
+}
+
+export async function getBudgetStatus(token: string, datasetId: string): Promise<BudgetStatusResponse> {
+  const url = `${API_BASE_URL}/api/budget/${datasetId}`;
+  const response = await fetchWithTimeout(url, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Failed to fetch budget status', response.status);
+  }
+  return data;
+}
+
+export async function getReceipt(token: string, receiptId: string): Promise<PrivacyReceipt> {
+  const url = `${API_BASE_URL}/api/receipts/${receiptId}`;
+  const response = await fetchWithTimeout(url, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Failed to fetch receipt', response.status);
+  }
+  return data;
+}
+
+export async function verifyAuditLedger(token: string): Promise<AuditVerificationResponse> {
+  const url = `${API_BASE_URL}/api/audit/verify`;
+  const response = await fetchWithTimeout(url, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Audit verification failed', response.status);
+  }
+  return data;
+}
+
+export async function getEvaluationStatus(token: string): Promise<EvaluationStatusResponse> {
+  const url = `${API_BASE_URL}/api/evaluation/status`;
+  const response = await fetchWithTimeout(url, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Evaluation status query failed', response.status);
+  }
+  return data;
 }
 
