@@ -150,3 +150,4 @@ privacy_release:
 
     with pytest.raises(ValueError, match="Cumulative epsilon cap must be strictly positive"):
         Settings(app_yaml_path=app_valid, spec_yaml_path=invalid_spec)
+

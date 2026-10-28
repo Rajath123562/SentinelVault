@@ -212,3 +212,4 @@ class Settings:
 def get_settings() -> Settings:
     """Cached factory function for application settings."""
     return Settings()
+

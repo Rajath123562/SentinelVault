@@ -25,3 +25,4 @@ def test_b02_health_endpoint(client: TestClient):
     assert "password" not in response.text.lower()
     assert "secret" not in response.text.lower()
     assert "differential_privacy_ready" not in data
+

@@ -153,3 +153,4 @@ async def get_system_status(settings: Settings = Depends(get_settings)) -> Syste
         server_time=datetime.now(timezone.utc),
         capabilities=capabilities
     )
+

@@ -99,3 +99,4 @@ The HOTFIX quality assurance methodology strictly adheres to empirical software 
 * **Phase 5 (Audit & Verifiable Receipts)**:
   * Tamper-detection tests verifying SHA-256 Merkle chain breakage upon log mutation.
   * Public key signature verification on Privacy Receipts.
+

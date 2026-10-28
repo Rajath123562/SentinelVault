@@ -51,3 +51,4 @@ The following engineering decisions have been made to establish a production-gra
    * Login screens and token verification are scheduled for Phase 2. The Phase 1 frontend reflects system status only.
 3. **Synthetic Data Absence**:
    * No queries can be executed against official challenge datasets until they are placed in the workspace and validated in Phase 2.
+

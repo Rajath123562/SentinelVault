@@ -18,3 +18,4 @@ def client():
 def app_settings():
     """Provides validated application settings."""
     return get_settings()
+

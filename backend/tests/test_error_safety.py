@@ -43,3 +43,4 @@ def test_b09_validation_error_is_sanitized():
     data = response.json()
     assert data["error"] == "HTTP Error"
     assert "Not Found" in data["detail"]
+

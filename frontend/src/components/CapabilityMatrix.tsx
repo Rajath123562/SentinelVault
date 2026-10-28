@@ -89,3 +89,4 @@ export const CapabilityMatrix: React.FC<CapabilityMatrixProps> = ({ capabilities
     </section>
   );
 };
+

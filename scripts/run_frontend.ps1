@@ -7,3 +7,4 @@ Set-Location "$RepoRoot/frontend"
 
 Write-Host "Starting HOTFIX Frontend on http://localhost:5173..." -ForegroundColor Cyan
 npm run dev
+

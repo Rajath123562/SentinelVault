@@ -31,3 +31,4 @@ export const ConnectionAlert: React.FC<ConnectionAlertProps> = ({ error, onRetry
     </div>
   );
 };
+

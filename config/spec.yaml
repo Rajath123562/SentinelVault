@@ -20,3 +20,4 @@ privacy:
 release:
   enabled: false
   disabled_reason: "Official accounting specification not configured"
+

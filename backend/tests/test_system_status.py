@@ -64,3 +64,4 @@ def test_b11_api_contract_consistency(client: TestClient):
         assert "status" in cap and cap["status"] in {"IMPLEMENTED", "PLANNED", "BLOCKED", "NOT_CONFIGURED"}
         assert "phase" in cap and isinstance(cap["phase"], str)
         assert "description" in cap and isinstance(cap["description"], str)
+

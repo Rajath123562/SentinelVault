@@ -151,3 +151,4 @@ The architecture spans five discrete phases. The table below clearly distinguish
 ```
 
 This guarantees an honest, verified software baseline ready for incremental extension in Phase 2.
+

@@ -149,3 +149,4 @@ The following endpoints represent future contracts designed for subsequent phase
 | `/api/v1/privacy/receipts/{id}` | `GET` | Phase 5 | Retrieves signed, verifiable Privacy Receipt (R15). |
 | `/api/v1/audit/verify` | `POST` | Phase 5 | Cryptographically verifies log chain integrity (R16). |
 | `/api/v1/evaluations/report` | `GET` | Phase 4 | Returns empirical risk & utility benchmark report (R10, R13, R18). |
+

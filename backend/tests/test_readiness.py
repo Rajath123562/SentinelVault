@@ -24,3 +24,4 @@ def test_b03_readiness_distinguishes_app_from_privacy_readiness(client: TestClie
     assert data["evaluation_harness_status"] == "UNAVAILABLE"
     assert "release_disabled_reason" in data
     assert len(data["release_disabled_reason"]) > 0
+

@@ -32,3 +32,4 @@ def test_b12_fixture_isolation():
 
     assert data["is_official_dataset"] is False
     assert "mock_id" in data["records"][0]
+
