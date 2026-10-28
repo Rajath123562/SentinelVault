@@ -1,0 +1,17 @@
+{
+  "__comment": "TEST FIXTURE ONLY: Fabricated dummy records for unit testing structure. NOT official hackathon data.",
+  "is_official_dataset": false,
+  "fixture_purpose": "unit-test-data-pipeline-contracts",
+  "records": [
+    {
+      "mock_id": "TEST-001",
+      "mock_category": "A",
+      "mock_metric": 10.5
+    },
+    {
+      "mock_id": "TEST-002",
+      "mock_category": "B",
+      "mock_metric": 22.0
+    }
+  ]
+}

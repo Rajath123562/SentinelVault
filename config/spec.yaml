@@ -1,0 +1,22 @@
+# Official Privacy Accounting Specification Configuration
+# Status must remain NOT_CONFIGURED until official hackathon specification is verified
+
+spec:
+  status: "NOT_CONFIGURED"
+  version: null
+  source: null
+  notes: "Official Track 4 Privacy Accounting Specification not present in workspace"
+
+privacy:
+  unit_of_privacy: null
+  adjacency: null
+  accounting_method: null
+  composition_rules: null
+  cap_epsilon: 5.0
+  clipping_assumptions: null
+  risk_metric: null
+  risk_threshold: null
+
+release:
+  enabled: false
+  disabled_reason: "Official accounting specification not configured"
