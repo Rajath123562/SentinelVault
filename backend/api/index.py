@@ -22,3 +22,4 @@ if os.getenv("VERCEL") or not os.access(backend_dir, os.W_OK):
 from app.main import create_application
 
 app = create_application()
+
