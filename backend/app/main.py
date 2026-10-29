@@ -160,6 +160,20 @@ def create_application() -> FastAPI:
     app.include_router(system_router)
     app.include_router(mvp_router)
 
+    @app.get("/", summary="SentinelVault Gateway API Root")
+    async def root_status():
+        """Root status probe providing gateway metadata and documentation links."""
+        return {
+            "project": "SentinelVault — Zero-Trust Differential Privacy Gateway",
+            "tagline": "Analyze Data. Don't Expose It.",
+            "status": "OPERATIONAL",
+            "documentation": "/docs",
+            "openapi": "/openapi.json",
+            "system_status": "/api/system/status",
+            "health": "/health",
+            "readiness": "/ready"
+        }
+
     return app
 
 
