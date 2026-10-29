@@ -1,0 +1,30 @@
+# HOTFIX Application Configuration
+app:
+  name: "HOTFIX Privacy-by-Design Analytics Gateway"
+  short_name: "HOTFIX"
+  team_id: "UG 59"
+  phase: "Phase 1"
+  version: "0.1.0"
+  environment: "development"
+  config_version: "1.0.0"
+
+server:
+  host: "127.0.0.1"
+  port: 8000
+  cors_origins:
+    - "http://localhost:5173"
+    - "http://127.0.0.1:5173"
+
+database:
+  enabled: false
+  dialect: "sqlite"
+  url: "sqlite:///./hotfix_dev.db"
+
+logging:
+  level: "INFO"
+  structured: true
+
+privacy_release:
+  enabled: false
+  disabled_reason: "Phase 1 foundation: Differential privacy engine and official accounting specification not yet configured"
+
