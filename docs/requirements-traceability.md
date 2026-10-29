@@ -1,9 +1,10 @@
-# HOTFIX — Requirements Traceability Matrix (RTM)
+# SentinelVault — Requirements Traceability Matrix (RTM)
 
-**Project Name**: HOTFIX Privacy-by-Design Analytics Gateway  
-**Team ID**: UG 59  
+**Product Name**: SentinelVault — Zero-Trust Privacy-Preserving Analytics Gateway  
+**Tagline**: Analyze Data. Don't Expose It.  
+**Team**: HOTFIX, Team ID UG 59  
 **Track**: Privacy by Design — Unlock Data Without Exposing It  
-**Current Milestone**: Minimum Viable Product (MVP)  
+**Current Milestone**: Complete Minimum Viable Product (MVP)  
 **Version**: 2.0.0  
 **Date**: October 28, 2026
 
@@ -21,17 +22,17 @@ This document preserves the original project proposal contract and maps every fu
 
 ---
 
-## 2. Requirements Traceability Table (R01 – R21)
+## 2. Requirements Traceability Table (R01 – R24)
 
 | Req ID | Original Proposal Requirement | Implemented Architecture Module | Verification Method & Automated Test | Current Status | Empirical Evidence / Test Result |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **R01** | User authentication through secure login credentials. | `backend/app/services/auth_service.py` | Pytest `test_mvp_auth.py::test_01_valid_login_succeeds` | **VERIFIED** | PBKDF2-HMAC-SHA256 with 100,000 rounds and secure session token generation. |
-| **R02** | Temporary lockout after five consecutive failed login attempts. | `backend/app/services/auth_service.py` | Pytest `test_mvp_auth.py::test_03_five_failed_attempts_trigger_temporary_lockout` | **VERIFIED** | Locks account for 15 minutes after 5 consecutive failures; returns HTTP 429. |
-| **R03** | Role-based access control (RBAC) granting privileges based on user role. | `backend/app/services/auth_service.py` | Pytest `test_mvp_auth.py::test_05_role_based_access_control` | **VERIFIED** | Distinct permissions enforced for `analyst`, `data_steward`, and `auditor` roles. |
-| **R04** | Dataset analysis and verification upon ingestion. | `backend/app/services/query_engine.py` | Pytest `test_mvp_queries.py::test_08_unknown_dataset_is_rejected` | **VERIFIED** | Validates metadata, schema, and record counts for synthetic demo datasets. |
-| **R05** | Sensitive-information detection and classification. | `backend/app/services/query_engine.py` | Pytest `test_mvp_queries.py::test_10_unapproved_field_is_rejected` | **VERIFIED** | Blocks unapproved columns (SSN, MRN, account numbers) with HTTP 400. |
-| **R06** | Data-quality and anomaly checks. | `backend/app/services/query_engine.py` | Pytest `test_mvp_queries.py::test_11_malformed_category_value_is_rejected` | **VERIFIED** | Enforces approved discrete categorical domain values; rejects invalid inputs. |
-| **R07** | Restriction of raw-record access for ordinary analysts. | `backend/app/services/query_engine.py` | Pytest `test_mvp_queries.py::test_13_raw_records_not_exposed` | **VERIFIED** | Analyst responses contain only noisy DP counts; raw records are never exposed. |
+| **R01** | User authentication through secure login credentials. | `backend/app/services/auth_service.py` | Pytest `test_phase2_security.py` (Cases 1-12) & `test_mvp_auth.py::test_01_valid_login_succeeds` | **VERIFIED** | PBKDF2-HMAC-SHA256 (100,000 rounds), constant-time dummy verification, 256-bit session tokens. |
+| **R02** | Temporary lockout after five consecutive failed login attempts. | `backend/app/services/auth_service.py` | Pytest `test_phase2_security.py` (All 12 Cases: `test_lockout_case_01` to `test_lockout_case_12`) | **VERIFIED** | Atomic 5-failure trigger, 15-minute lockout, DB persistence across restarts, non-extending on probe. |
+| **R03** | Role-based access control (RBAC) granting privileges based on user role. | `backend/app/services/auth_service.py` | Pytest `test_phase2_security.py` (Scenarios A-J) & `test_phase1_phase2_integration.py::test_i04` | **VERIFIED** | Server-authoritative Zero-Trust RBAC permission matrix for `analyst`, `data_steward`, `auditor`, `admin`. |
+| **R04** | Dataset analysis and verification upon ingestion. | `backend/app/services/query_engine.py` | Pytest `test_phase3_vault.py::test_v01_dataset_metadata_validation` | **VERIFIED** | Validates metadata, schema, and record counts for synthetic demo datasets. |
+| **R05** | Sensitive-information detection and classification. | `backend/app/services/query_engine.py` | Pytest `test_phase3_vault.py::test_v04_sensitive_column_classification_and_redaction` | **VERIFIED** | Blocks unapproved columns (SSN, MRN, account numbers) with HTTP 400. |
+| **R06** | Data-quality and anomaly checks. | `backend/app/services/query_engine.py` | Pytest `test_phase3_vault.py::test_v06_unknown_columns_do_not_silently_become_approved` | **VERIFIED** | Enforces approved discrete categorical domain values; rejects invalid inputs. |
+| **R07** | Restriction of raw-record access for ordinary analysts. | `backend/app/services/query_engine.py` | Pytest `test_phase3_vault.py::test_v03_raw_row_access_strictly_prevented` | **VERIFIED** | Analyst responses contain only noisy DP counts; raw records are never exposed. |
 | **R08** | Differential privacy mechanisms preserving privacy bounds. | `backend/app/services/privacy_engine.py` | Pytest `test_mvp_privacy.py::test_15_real_laplace_invoked` | **VERIFIED** | Real Laplace mechanism via IBM `diffprivlib` with non-negative integer post-processing. |
 | **R09** | Cumulative privacy-budget enforcement (cap $\epsilon \le 5.0$). | `backend/app/services/query_engine.py` | Pytest `test_mvp_privacy.py::test_18_and_19_budget_exhaustion_and_cap_limit` | **VERIFIED** | Micro-epsilon integer math ($5.0 = 5,000,000 \mu\epsilon$); rejects queries when budget is insufficient (HTTP 429). |
 | **R10** | Re-identification and membership-inference attack evaluation. | `backend/app/api/routes/mvp.py` | Pytest `test_system_status.py::test_b10_no_false_feature_claims` | **NOT_CONFIGURED** | Honestly disclosed as `OFFICIAL EMPIRICAL RISK EVALUATION NOT CONFIGURED` until official harness arrives. |
@@ -46,12 +47,15 @@ This document preserves the original project proposal contract and maps every fu
 | **R19** | React/TypeScript frontend interface. | `frontend/src/` | Vitest `MVP.test.tsx` (4 tests) & `App.test.tsx` (6 tests) | **VERIFIED** | React 19 + TypeScript frontend with 4 comprehensive views (A, B, C, D). |
 | **R20** | FastAPI backend server architecture. | `backend/app/main.py`, `app/api/` | Pytest 44 / 44 tests passing | **VERIFIED** | Modular FastAPI service with SQLite database, validated schema models, and secure endpoints. |
 | **R21** | Database support (SQLite for local dev, PostgreSQL for production). | `backend/app/db/connection.py` | Pytest `test_20_concurrent_requests_cannot_overspend` | **VERIFIED** | SQLite persistent ledger with WAL mode and `BEGIN IMMEDIATE` atomic concurrency. |
+| **R22** | Multi-Factor Authentication (RFC 6238 TOTP) with recovery codes. | `backend/app/services/auth_service.py` | Pytest `test_phase2_security.py::test_mfa_full_lifecycle_enrollment_and_enforcement` | **VERIFIED** | Pure Python RFC 6238 TOTP generation, confirmation code verification, 5 SHA-256 hashed recovery codes. |
+| **R23** | Session lifecycle management and immediate administrative revocation. | `backend/app/services/auth_service.py` | Pytest `test_phase2_security.py::test_administrative_session_revocation` | **VERIFIED** | Voluntary `/api/auth/logout` and steward-initiated `/api/auth/sessions/revoke` instantly invalidate tokens. |
+| **R24** | Immutable Security Event Audit Trail (`security_events`). | `backend/app/db/connection.py` | Pytest `test_phase1_phase2_integration.py::test_i13_security_audit_ledger_continuity` | **VERIFIED** | Dedicated SQLite audit table capturing authentication, authorization, lockout, and revocation events. |
 
 ---
 
 ## 3. Milestone Summary
 
-* **Total Requirements Formalized**: 21
-* **Empirically Verified in MVP**: **19** (R01–R09, R11–R13, R15–R21)
+* **Total Requirements Formalized**: 24
+* **Empirically Verified**: **22** (R01–R09, R11–R13, R15–R24)
 * **Honest Unconfigured Status (Pending Track 4 Harness)**: **2** (R10, R14)
 * **Orphan Requirements**: **0**

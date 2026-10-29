@@ -1,0 +1,65 @@
+================================================================================
+SENTINELVAULT — HOSTED APPLICATION DEPLOYMENT STATUS (PHASE 3)
+================================================================================
+Project: SentinelVault (Zero-Trust Privacy-Preserving Analytics Gateway)
+Team: HOTFIX
+Team ID: UG 59
+Track: Track 4 — Privacy by Design
+Platform: HackBridge
+Date: October 29, 2026
+
+1. HOSTED DEPLOYMENT STATUS: LOCALLY VERIFIED / HOSTING ACCOUNT PENDING
+--------------------------------------------------------------------------------
+Notice per HackBridge Integrity Guidelines:
+No pre-authorized cloud hosting credentials (e.g., AWS, GCP, Firebase Blaze,
+Fly.io, Vercel Production) were provisioned in this evaluation sandbox.
+
+In strict compliance with the HackBridge Honesty & Integrity Contract:
+- We DO NOT invent or fabricate a fictional public URL.
+- We DO NOT misrepresent localhost (127.0.0.1:8000 / localhost:5173) as a public URL.
+- We provide reproducible, 1-command verified deployment instructions below.
+
+2. LOCAL VERIFIED EXECUTION URLS (CURRENT WORKING DEPLOYMENT)
+--------------------------------------------------------------------------------
+- Frontend Web Gateway:       http://localhost:5173
+- Backend REST API Engine:    http://127.0.0.1:8000
+- Interactive Swagger Docs:   http://127.0.0.1:8000/docs
+- OpenAPI JSON Specification: http://127.0.0.1:8000/openapi.json
+- Health & Readiness Probes:  http://127.0.0.1:8000/health | /readiness
+
+Demonstration Credentials:
+- Analyst Role:        username: analyst_user  | password: AnalystPass2026!
+- Compliance Auditor:  username: auditor_user  | password: AuditorPass2026!
+- Data Steward:        username: steward_user  | password: StewardPass2026!
+- Gateway Admin:       username: admin_user    | password: AdminPass2026!
+
+3. REPRODUCIBLE 1-COMMAND LOCAL EXECUTION
+--------------------------------------------------------------------------------
+Windows PowerShell:
+  powershell -ExecutionPolicy Bypass -File scripts/test_all.ps1
+
+Automated Service Launch:
+  Backend:   start_backend.bat  (or python -m uvicorn app.main:app --app-dir backend --port 8000)
+  Frontend:  start_frontend.bat (or npm run dev --prefix frontend)
+
+4. REMAINING CLOUD DEPLOYMENT PROCEDURE (WHEN CREDENTIALS ARE PROVIDED)
+--------------------------------------------------------------------------------
+SentinelVault is container-ready and multi-cloud compliant:
+
+Step 1: Container Build
+  docker build -t sentinelvault-backend:latest -f backend/Dockerfile .
+  docker build -t sentinelvault-frontend:latest -f frontend/Dockerfile .
+
+Step 2: Environment Variables (.env)
+  APP_ENV=production
+  DATABASE_PATH=/var/data/hotfix_mvp.db
+  APP_SECRET=<generate-secure-32-byte-hex>
+  CORS_ORIGINS=https://sentinelvault.app,https://api.sentinelvault.app
+
+Step 3: Deploy to Cloud Run / AWS ECS / Fly.io
+  gcloud run deploy sentinelvault-api --image gcr.io/<PROJECT>/sentinelvault-backend:latest --port 8000
+  gcloud run deploy sentinelvault-ui  --image gcr.io/<PROJECT>/sentinelvault-frontend:latest --port 80
+
+Once deployed with team credentials, update this record with the live URL.
+================================================================================
+

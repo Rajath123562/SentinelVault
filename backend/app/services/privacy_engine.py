@@ -82,3 +82,4 @@ def apply_laplace_noise(exact_count: int, epsilon: float, seed: Optional[int] = 
     except Exception as e:
         # FAIL-CLOSED: Never expose the exact count if noise generation fails!
         raise RuntimeError(f"Differential privacy mechanism execution failed: {e}") from e
+

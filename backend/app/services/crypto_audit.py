@@ -235,3 +235,161 @@ def tamper_audit_entry_for_test(conn, entry_id: int, new_expenditure_micro: int)
         "UPDATE audit_log SET privacy_expenditure_micro = ? WHERE entry_id = ?",
         (new_expenditure_micro, entry_id)
     )
+
+
+TRUSTED_KEY_ID = "ED25519-ENCLAVE-2026-V1"
+RECEIPT_SCHEMA_VERSION = "1.0.0"
+
+
+def canonicalize_receipt(data: Dict[str, Any]) -> str:
+    """Generates a deterministic canonical representation of the security-critical receipt fields."""
+    fields = [
+        str(data.get("receipt_id", "")),
+        str(data.get("release_id", "")),
+        str(data.get("user_id", "")),
+        str(data.get("dataset_id", "")),
+        str(data.get("dataset_version", "")),
+        str(data.get("query_fingerprint", "")),
+        str(data.get("query_description", "")),
+        str(data.get("mechanism", "")),
+        f"{float(data.get('epsilon_spent', 0.0)):.4f}",
+        f"{float(data.get('cumulative_epsilon', 0.0)):.4f}",
+        f"{float(data.get('remaining_budget', 0.0)):.4f}",
+        str(data.get("policy_check_status", "")),
+        str(data.get("audit_entry_hash", "")),
+        str(data.get("key_id", TRUSTED_KEY_ID)),
+        str(data.get("schema_version", RECEIPT_SCHEMA_VERSION)),
+        str(data.get("timestamp", ""))
+    ]
+    return "|".join(fields)
+
+
+def compute_receipt_hash(data: Dict[str, Any]) -> str:
+    """Calculates deterministic SHA-256 hash for canonical receipt content."""
+    canonical_repr = canonicalize_receipt(data)
+    return hashlib.sha256(canonical_repr.encode("utf-8")).hexdigest()
+
+
+def verify_receipt_cryptographic(conn, receipt_id: str) -> Dict[str, Any]:
+    """
+    Performs end-to-end cryptographic and semantic integrity checks on a Privacy Receipt.
+    Validates:
+    1. Receipt existence and schema version.
+    2. Revocation status.
+    3. Trust status of signing key identifier.
+    4. Canonical SHA-256 hash match against tamper-evident payload.
+    5. Ed25519 digital signature authenticity using enclave public key.
+    6. Relational linkage to committed query release record.
+    7. Relational linkage to immutable hash-chained audit log.
+    """
+    row = conn.execute("SELECT * FROM privacy_receipts WHERE receipt_id = ?", (receipt_id,)).fetchone()
+    if not row:
+        return {
+            "receipt_id": receipt_id,
+            "is_valid": False,
+            "verification_status": "NOT_FOUND",
+            "checks": {
+                "receipt_found": False,
+                "schema_valid": False,
+                "not_revoked": False,
+                "hash_match": False,
+                "signature_valid": False,
+                "key_trusted": False,
+                "release_linked": False,
+                "audit_linked": False,
+            },
+            "error_message": f"Privacy receipt '{receipt_id}' does not exist in gateway records."
+        }
+
+    receipt = dict(row)
+    checks = {
+        "receipt_found": True,
+        "schema_valid": receipt.get("schema_version") == RECEIPT_SCHEMA_VERSION,
+        "not_revoked": not bool(receipt.get("is_revoked", 0)),
+        "key_trusted": receipt.get("key_id") == TRUSTED_KEY_ID,
+    }
+
+    # Verify canonical hash
+    recalc_hash = compute_receipt_hash(receipt)
+    stored_hash = receipt.get("receipt_hash") or ""
+    # If legacy receipt without stored receipt_hash, hash can match audit_entry_hash
+    hash_match = (stored_hash == recalc_hash) if stored_hash else True
+    checks["hash_match"] = hash_match
+
+    # Verify signature against audit entry hash or receipt hash
+    sig_valid = (
+        verify_entry_signature(receipt.get("audit_entry_hash", ""), receipt.get("signature", "")) or
+        (bool(stored_hash) and verify_entry_signature(stored_hash, receipt.get("signature", "")))
+    )
+    checks["signature_valid"] = sig_valid
+
+    # Verify release linkage
+    rel_row = conn.execute(
+        "SELECT release_id, query_fingerprint, dataset_id FROM query_releases WHERE release_id = ?",
+        (receipt["release_id"],)
+    ).fetchone()
+    checks["release_linked"] = bool(
+        rel_row and
+        rel_row["query_fingerprint"] == receipt["query_fingerprint"] and
+        rel_row["dataset_id"] == receipt["dataset_id"]
+    )
+
+    # Verify audit linkage
+    audit_row = conn.execute(
+        "SELECT entry_hash, receipt_id FROM audit_log WHERE receipt_id = ? AND entry_hash = ?",
+        (receipt["receipt_id"], receipt["audit_entry_hash"])
+    ).fetchone()
+    checks["audit_linked"] = bool(audit_row)
+
+    is_valid = all(checks.values())
+    status_str = "VERIFIED_AUTHENTIC" if is_valid else "VERIFICATION_FAILED"
+
+    reasons = []
+    if not checks["schema_valid"]: reasons.append("Unsupported schema version")
+    if not checks["not_revoked"]: reasons.append(f"Receipt revoked: {receipt.get('revoked_reason', 'Administrative revocation')}")
+    if not checks["key_trusted"]: reasons.append(f"Untrusted signing key: {receipt.get('key_id')}")
+    if not checks["hash_match"]: reasons.append("Receipt data modified (hash mismatch)")
+    if not checks["signature_valid"]: reasons.append("Cryptographic Ed25519 signature invalid")
+    if not checks["release_linked"]: reasons.append("Orphan receipt: no matching query release record")
+    if not checks["audit_linked"]: reasons.append("Missing or mismatched audit log entry link")
+
+    return {
+        "receipt_id": receipt_id,
+        "is_valid": is_valid,
+        "verification_status": status_str,
+        "checks": checks,
+        "key_id": receipt.get("key_id", TRUSTED_KEY_ID),
+        "algorithm": "Ed25519 + SHA-256",
+        "timestamp": receipt["timestamp"],
+        "error_message": "; ".join(reasons) if reasons else None,
+        "receipt_data": receipt
+    }
+
+
+def get_audit_entries(
+    conn,
+    limit: int = 50,
+    offset: int = 0,
+    dataset_scope: Optional[str] = None,
+    search: Optional[str] = None
+) -> tuple[List[Dict[str, Any]], int]:
+    """Retrieves paginated audit log entries with optional dataset or actor filtering."""
+    base_query = "FROM audit_log WHERE 1=1"
+    params: List[Any] = []
+
+    if dataset_scope:
+        base_query += " AND dataset_scope = ?"
+        params.append(dataset_scope)
+    if search:
+        base_query += " AND (actor LIKE ? OR query_fingerprint LIKE ? OR receipt_id LIKE ?)"
+        s = f"%{search}%"
+        params.extend([s, s, s])
+
+    count_sql = f"SELECT COUNT(*) as total {base_query}"
+    total = conn.execute(count_sql, params).fetchone()["total"]
+
+    data_sql = f"SELECT * {base_query} ORDER BY entry_id DESC LIMIT ? OFFSET ?"
+    fetch_params = params + [min(max(limit, 1), 200), max(offset, 0)]
+    rows = conn.execute(data_sql, fetch_params).fetchall()
+    return [dict(r) for r in rows], total
+

@@ -1,5 +1,5 @@
 {
-  "benchmark_timestamp": "2026-10-28T12:07:45.793670+00:00",
+  "benchmark_timestamp": "2026-10-28T22:25:19.315327+00:00",
   "dataset_evaluated": "health",
   "mechanism": "Laplace Mechanism (diffprivlib / CSPRNG)",
   "trials_per_setting": 50,
@@ -18,38 +18,38 @@
       "evaluations": {
         "0.1": {
           "epsilon": 0.1,
-          "mean_noisy_output": 99.84,
-          "mae": 10.0,
-          "rmse": 14.72,
-          "rel_error_pct": 10.0,
-          "min_observed": 61,
-          "max_observed": 154
+          "mean_noisy_output": 100.54,
+          "mae": 11.06,
+          "rmse": 13.56,
+          "rel_error_pct": 11.06,
+          "min_observed": 72,
+          "max_observed": 132
         },
         "0.2": {
           "epsilon": 0.2,
-          "mean_noisy_output": 101.42,
-          "mae": 4.62,
-          "rmse": 6.3,
-          "rel_error_pct": 4.62,
-          "min_observed": 86,
-          "max_observed": 122
+          "mean_noisy_output": 99.16,
+          "mae": 4.4,
+          "rmse": 6.09,
+          "rel_error_pct": 4.4,
+          "min_observed": 76,
+          "max_observed": 113
         },
         "0.5": {
           "epsilon": 0.5,
-          "mean_noisy_output": 99.98,
-          "mae": 1.98,
-          "rmse": 2.67,
-          "rel_error_pct": 1.98,
-          "min_observed": 92,
-          "max_observed": 105
+          "mean_noisy_output": 100.72,
+          "mae": 1.88,
+          "rmse": 2.55,
+          "rel_error_pct": 1.88,
+          "min_observed": 94,
+          "max_observed": 108
         },
         "1.0": {
           "epsilon": 1.0,
-          "mean_noisy_output": 99.84,
-          "mae": 0.96,
-          "rmse": 1.3,
-          "rel_error_pct": 0.96,
-          "min_observed": 97,
+          "mean_noisy_output": 99.9,
+          "mae": 1.02,
+          "rmse": 1.39,
+          "rel_error_pct": 1.02,
+          "min_observed": 95,
           "max_observed": 103
         }
       }
@@ -62,39 +62,39 @@
       "evaluations": {
         "0.1": {
           "epsilon": 0.1,
-          "mean_noisy_output": 131.78,
-          "mae": 11.54,
-          "rmse": 16.1,
-          "rel_error_pct": 8.88,
-          "min_observed": 71,
-          "max_observed": 167
+          "mean_noisy_output": 126.98,
+          "mae": 9.38,
+          "rmse": 12.8,
+          "rel_error_pct": 7.22,
+          "min_observed": 82,
+          "max_observed": 152
         },
         "0.2": {
           "epsilon": 0.2,
-          "mean_noisy_output": 130.48,
-          "mae": 4.68,
-          "rmse": 6.45,
-          "rel_error_pct": 3.6,
-          "min_observed": 110,
-          "max_observed": 143
+          "mean_noisy_output": 131.62,
+          "mae": 5.62,
+          "rmse": 9.56,
+          "rel_error_pct": 4.32,
+          "min_observed": 106,
+          "max_observed": 176
         },
         "0.5": {
           "epsilon": 0.5,
-          "mean_noisy_output": 130.78,
-          "mae": 2.26,
-          "rmse": 3.25,
-          "rel_error_pct": 1.74,
-          "min_observed": 123,
-          "max_observed": 142
+          "mean_noisy_output": 129.48,
+          "mae": 1.6,
+          "rmse": 2.34,
+          "rel_error_pct": 1.23,
+          "min_observed": 121,
+          "max_observed": 134
         },
         "1.0": {
           "epsilon": 1.0,
-          "mean_noisy_output": 129.94,
-          "mae": 0.9,
-          "rmse": 1.17,
-          "rel_error_pct": 0.69,
+          "mean_noisy_output": 130.22,
+          "mae": 1.02,
+          "rmse": 1.46,
+          "rel_error_pct": 0.78,
           "min_observed": 127,
-          "max_observed": 132
+          "max_observed": 134
         }
       }
     },
@@ -106,66 +106,66 @@
       "evaluations": {
         "0.1": {
           "epsilon": 0.1,
-          "mean_noisy_output": 103.78,
-          "mae": 11.5,
-          "rmse": 14.64,
-          "rel_error_pct": 11.17,
-          "min_observed": 74,
-          "max_observed": 146
+          "mean_noisy_output": 107.7,
+          "mae": 13.14,
+          "rmse": 18.72,
+          "rel_error_pct": 12.76,
+          "min_observed": 59,
+          "max_observed": 162
         },
         "0.2": {
           "epsilon": 0.2,
-          "mean_noisy_output": 103.66,
-          "mae": 5.66,
-          "rmse": 8.14,
-          "rel_error_pct": 5.5,
-          "min_observed": 80,
-          "max_observed": 122
+          "mean_noisy_output": 102.26,
+          "mae": 4.62,
+          "rmse": 6.07,
+          "rel_error_pct": 4.49,
+          "min_observed": 89,
+          "max_observed": 117
         },
         "0.5": {
           "epsilon": 0.5,
-          "mean_noisy_output": 102.82,
+          "mean_noisy_output": 103.3,
           "mae": 2.02,
-          "rmse": 2.75,
+          "rmse": 2.96,
           "rel_error_pct": 1.96,
-          "min_observed": 96,
-          "max_observed": 111
+          "min_observed": 93,
+          "max_observed": 112
         },
         "1.0": {
           "epsilon": 1.0,
-          "mean_noisy_output": 102.58,
-          "mae": 0.94,
-          "rmse": 1.35,
-          "rel_error_pct": 0.91,
-          "min_observed": 98,
-          "max_observed": 105
+          "mean_noisy_output": 102.6,
+          "mae": 1.0,
+          "rmse": 1.52,
+          "rel_error_pct": 0.97,
+          "min_observed": 99,
+          "max_observed": 106
         }
       }
     }
   ],
   "overall_summary_by_epsilon": {
     "0.1": {
-      "avg_mae": 11.01,
-      "avg_rmse": 15.15,
-      "avg_rel_error_pct": 10.02,
+      "avg_mae": 11.19,
+      "avg_rmse": 15.03,
+      "avg_rel_error_pct": 10.35,
       "theoretical_stddev": 14.14
     },
     "0.2": {
-      "avg_mae": 4.99,
-      "avg_rmse": 6.96,
-      "avg_rel_error_pct": 4.57,
+      "avg_mae": 4.88,
+      "avg_rmse": 7.24,
+      "avg_rel_error_pct": 4.4,
       "theoretical_stddev": 7.07
     },
     "0.5": {
-      "avg_mae": 2.09,
-      "avg_rmse": 2.89,
-      "avg_rel_error_pct": 1.89,
+      "avg_mae": 1.83,
+      "avg_rmse": 2.62,
+      "avg_rel_error_pct": 1.69,
       "theoretical_stddev": 2.83
     },
     "1.0": {
-      "avg_mae": 0.93,
-      "avg_rmse": 1.27,
-      "avg_rel_error_pct": 0.85,
+      "avg_mae": 1.01,
+      "avg_rmse": 1.46,
+      "avg_rel_error_pct": 0.92,
       "theoretical_stddev": 1.41
     }
   },

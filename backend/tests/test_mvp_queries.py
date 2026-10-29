@@ -133,3 +133,4 @@ def test_14_invalid_epsilon_rejected(client: TestClient, analyst_token: str):
         resp = client.post("/api/queries/run", json=payload, headers={"Authorization": f"Bearer {analyst_token}"})
         assert resp.status_code == 400
         assert "not permitted" in resp.json()["detail"]
+

@@ -58,6 +58,41 @@ def create_application() -> FastAPI:
         allow_headers=["*"],
     )
 
+    # Security Headers & Resource Protection Middleware
+    @app.middleware("http")
+    async def security_hardening_middleware(request: Request, call_next):
+        # 1. Enforce payload size limit (max 2MB)
+        content_length = request.headers.get("content-length")
+        if content_length:
+            try:
+                if int(content_length) > 2 * 1024 * 1024:
+                    return JSONResponse(
+                        status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+                        content=ErrorResponse(
+                            error="Payload Too Large",
+                            detail="Request body exceeds maximum permitted limit of 2MB.",
+                            code="413",
+                            timestamp=datetime.now(timezone.utc)
+                        ).model_dump(mode="json")
+                    )
+            except ValueError:
+                pass
+
+        # 2. Process request
+        response = await call_next(request)
+
+        # 3. Inject defense-in-depth HTTP security headers
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["X-Frame-Options"] = "DENY"
+        response.headers["X-XSS-Protection"] = "1; mode=block"
+        response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        response.headers["Permissions-Policy"] = "geolocation=(), camera=(), microphone=()"
+        response.headers["Content-Security-Policy"] = (
+            "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; "
+            "img-src 'self' data:; connect-src 'self' http://localhost:8000 http://127.0.0.1:8000; frame-ancestors 'none';"
+        )
+        return response
+
     # Sanitize and standardize HTTP exceptions
     @app.exception_handler(StarletteHTTPException)
     async def http_exception_handler(request: Request, exc: StarletteHTTPException):
@@ -87,6 +122,8 @@ def create_application() -> FastAPI:
     # Catch-all exception handler enforcing safe, non-leaking responses
     @app.exception_handler(Exception)
     async def unhandled_exception_handler(request: Request, exc: Exception):
+        import traceback
+        traceback.print_exc()
         logger.error("Unhandled internal server exception", exc_info=True)
         return JSONResponse(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,

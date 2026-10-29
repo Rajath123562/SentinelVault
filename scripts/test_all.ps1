@@ -8,8 +8,9 @@ Write-Host "HOTFIX MVP Automated Test & Verification Suite" -ForegroundColor Cya
 Write-Host "=================================================" -ForegroundColor Cyan
 
 # 1. Backend tests
-Write-Host "`n[1/5] Running Backend Tests (pytest - 44 tests)..." -ForegroundColor Yellow
+Write-Host "`n[1/6] Running Backend Tests (pytest - 350 tests)..." -ForegroundColor Yellow
 Set-Location "$RepoRoot/backend"
+$env:PYTHONPATH = "$RepoRoot;$RepoRoot/backend"
 python -m pytest tests -v
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Backend test suite failed!"
@@ -17,7 +18,7 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 # 2. Empirical Utility Benchmark
-Write-Host "`n[2/5] Running DP Empirical Utility Benchmark (50 trials/eps)..." -ForegroundColor Yellow
+Write-Host "`n[2/6] Running DP Empirical Utility Benchmark (50 trials/eps)..." -ForegroundColor Yellow
 Set-Location $RepoRoot
 python scripts/run_utility_benchmark.py
 if ($LASTEXITCODE -ne 0) {
@@ -25,8 +26,17 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
-# 3. Frontend type check
-Write-Host "`n[3/5] Running Frontend TypeScript Check..." -ForegroundColor Yellow
+# 3. Phase 5 Privacy Risk & Adversarial Evaluation
+Write-Host "`n[3/6] Running Phase 5 Privacy Risk & Adversarial Evaluation..." -ForegroundColor Yellow
+Set-Location $RepoRoot
+python scripts/run_privacy_risk_evaluation.py
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "Privacy risk evaluation script failed!"
+    exit 1
+}
+
+# 4. Frontend type check
+Write-Host "`n[4/6] Running Frontend TypeScript Check..." -ForegroundColor Yellow
 Set-Location "$RepoRoot/frontend"
 npm run typecheck
 if ($LASTEXITCODE -ne 0) {
@@ -34,16 +44,16 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
-# 4. Frontend unit tests
-Write-Host "`n[4/5] Running Frontend Unit Tests (vitest - 10 tests)..." -ForegroundColor Yellow
+# 5. Frontend unit tests
+Write-Host "`n[5/6] Running Frontend Unit Tests (vitest)..." -ForegroundColor Yellow
 npm test
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Frontend test suite failed!"
     exit 1
 }
 
-# 5. Frontend production build
-Write-Host "`n[5/5] Running Frontend Production Build (vite build)..." -ForegroundColor Yellow
+# 6. Frontend production build
+Write-Host "`n[6/6] Running Frontend Production Build (vite build)..." -ForegroundColor Yellow
 npm run build
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Frontend production build failed!"

@@ -39,34 +39,61 @@ export interface ReadinessResponse {
 
 export type ConnectionStatus = 'connecting' | 'connected' | 'disconnected' | 'error';
 
+export interface SecurityEvent {
+  event_id: string;
+  event_type: string;
+  outcome: string;
+  actor?: string;
+  resource?: string;
+  action?: string;
+  source_ip?: string;
+  details?: string;
+  timestamp: string;
+}
+
+export type UserRole = 'analyst' | 'data_steward' | 'auditor' | 'admin';
+
 export interface UserSession {
   username: string;
-  role: 'analyst' | 'data_steward' | 'auditor';
+  role: UserRole;
   token: string;
   expires_at: string;
 }
 
 export interface DatasetMetadata {
   dataset_id: string;
-  name: string;
+  title?: string;
+  name?: string;
   description: string;
   total_records: number;
   privacy_unit: string;
-  sensitive_fields_protected: string[];
-  allowed_fields: Record<string, string[]>;
-  allowed_operators: string[];
+  version?: string;
+  sensitive_fields_protected?: string[];
+  approved_fields?: Record<string, string[]>;
+  allowed_fields?: Record<string, string[]>;
+  allowed_operators?: string[];
   is_official_dataset: boolean;
 }
 
 export interface QueryPreviewResponse {
   is_valid: boolean;
   dataset_id: string;
+  field: string;
+  operator: string;
+  value: any;
+  epsilon: number;
   query_fingerprint: string;
-  privacy_unit: string;
-  global_sensitivity: number;
-  epsilon_requested: number;
-  policy_check: string;
-  message: string;
+  estimated_privacy_cost?: number;
+  current_remaining_budget?: number;
+  is_budget_sufficient?: boolean;
+  is_cached_release_available?: boolean;
+  policy_status?: string;
+  policy_check?: string;
+  global_sensitivity?: number;
+  privacy_unit?: string;
+  epsilon_requested?: number;
+  message?: string;
+  logical_query?: string;
 }
 
 export interface PrivacyReceipt {
@@ -99,6 +126,14 @@ export interface QueryRunResponse {
   receipt: PrivacyReceipt;
 }
 
+export interface BudgetRecentRelease {
+  release_id: string;
+  query_description: string;
+  epsilon_spent: number;
+  cumulative_epsilon: number;
+  timestamp: string;
+}
+
 export interface BudgetStatusResponse {
   dataset_id: string;
   cap_epsilon: number;
@@ -106,6 +141,7 @@ export interface BudgetStatusResponse {
   remaining_epsilon: number;
   accounting_notice: string;
   updated_at: string;
+  recent_releases?: BudgetRecentRelease[];
 }
 
 export interface AuditVerificationResponse {
@@ -139,4 +175,102 @@ export interface EvaluationStatusResponse {
     conclusions: string[];
   } | null;
 }
+
+export interface UserListItem {
+  username: string;
+  user_id: string;
+  role: string;
+  status: string;
+  failed_attempts: number;
+  locked_until?: string | null;
+  created_at: string;
+  mfa_enabled: boolean;
+}
+
+export interface SecurityAlert {
+  alert_id: string;
+  rule_id?: string;
+  title?: string;
+  severity: 'HIGH' | 'MEDIUM' | 'LOW' | string;
+  status?: 'OPEN' | 'ACKNOWLEDGED' | 'RESOLVED' | 'FALSE_POSITIVE' | string;
+  actor?: string | null;
+  resource?: string | null;
+  details?: string | null;
+  evidence?: Record<string, any>;
+  acknowledged_by?: string | null;
+  acknowledged_at?: string | null;
+  resolved_by?: string | null;
+  resolved_at?: string | null;
+  resolution_notes?: string | null;
+  created_at?: string;
+  updated_at?: string;
+  timestamp?: string;
+  event_type?: string;
+  outcome?: string;
+  source_ip?: string | null;
+}
+
+export interface ReceiptVerificationCheck {
+  name: string;
+  passed: boolean;
+  details: string;
+}
+
+export interface ReceiptVerificationResponse {
+  receipt_id: string;
+  is_valid: boolean;
+  status: 'VERIFIED' | 'TAMPERED' | 'REVOKED' | 'INVALID';
+  verified_at: string;
+  checks: Record<string, ReceiptVerificationCheck>;
+  receipt_summary: Record<string, any>;
+  error?: string;
+}
+
+export interface AuditEntryItem {
+  entry_id: string;
+  timestamp: string;
+  event_type: string;
+  dataset_id: string;
+  user_id: string;
+  query_fingerprint: string;
+  epsilon_spent: number;
+  entry_hash: string;
+  previous_entry_hash: string;
+  status: string;
+}
+
+export interface AuditEntriesResponse {
+  total: number;
+  limit: number;
+  offset: number;
+  entries: AuditEntryItem[];
+  ledger_valid: boolean;
+}
+
+export interface IncidentStatusResponse {
+  current_state: 'NORMAL' | 'RESTRICTED' | 'RELEASES_DISABLED';
+  trigger_source: string;
+  reason: string;
+  updated_by: string;
+  updated_at: string;
+  releases_allowed: boolean;
+  max_permitted_epsilon: number | null;
+  status_badge: string;
+}
+
+export type ActiveScreen = 
+  | 'dashboard'
+  | 'datasets'
+  | 'query'
+  | 'results'
+  | 'budget'
+  | 'receipt'
+  | 'audit'
+  | 'security'
+  | 'users'
+  | 'settings'
+  | 'about'
+  | 'denied'
+  | '404';
+
 

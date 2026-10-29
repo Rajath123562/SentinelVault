@@ -8,8 +8,20 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, Any, Optional
 
-from app.db.connection import get_connection
-from app.services.crypto_audit import append_audit_entry
+from app.db.connection import get_connection, record_security_event_db
+from app.services.crypto_audit import (
+    append_audit_entry,
+    compute_receipt_hash,
+    sign_entry_hash,
+    TRUSTED_KEY_ID,
+    RECEIPT_SCHEMA_VERSION,
+)
+from app.services.incident_service import (
+    get_incident_status,
+    STATE_RELEASES_DISABLED,
+    STATE_RESTRICTED,
+    ReleaseBlockedByIncidentError,
+)
 from app.services.privacy_engine import (
     apply_laplace_noise,
     EPSILON_ALLOWLIST,
@@ -46,7 +58,10 @@ def _resolve_data_file(filename: str) -> Path:
 
 def get_dataset_metadata(dataset_id: str) -> Dict[str, Any]:
     """Loads dataset configuration and schema summary."""
-    filename = "health_records_demo.json" if dataset_id == "health" else "financial_transactions_demo.json"
+    norm_id = (dataset_id or "").strip().lower()
+    if norm_id not in {"health", "financial"}:
+        raise PolicyViolationError(f"Unauthorized or unknown dataset: '{dataset_id}'")
+    filename = "health_records_demo.json" if norm_id == "health" else "financial_transactions_demo.json"
     path = _resolve_data_file(filename)
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -72,7 +87,8 @@ def list_available_datasets() -> list[Dict[str, Any]]:
 
 def compute_query_fingerprint(dataset_id: str, field: str, operator: str, value: str) -> str:
     """Computes a canonical SHA-256 fingerprint for the query."""
-    normalized = f"{dataset_id.strip().lower()}:{field.strip().lower()}:{operator.strip().lower()}:{str(value).strip().lower()}"
+    norm_op = "equals" if operator.strip().lower() in {"equals", "="} else operator.strip().lower()
+    normalized = f"{dataset_id.strip().lower()}:{field.strip().lower()}:{norm_op}:{str(value).strip().lower()}"
     return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
 
 
@@ -94,7 +110,8 @@ def validate_query(dataset_id: str, field: str, operator: str, value: Any, epsil
             f"Field '{field}' is not in approved allowlist for dataset '{dataset_id}'. Approved: {list(approved_fields.keys())}"
         )
 
-    if operator != "equals":
+    norm_op = "equals" if str(operator).strip().lower() in {"equals", "="} else str(operator).strip().lower()
+    if norm_op != "equals":
         raise PolicyViolationError(f"Unsupported operator '{operator}'. MVP strictly supports 'equals'.")
 
     allowed_values = approved_fields[field]
@@ -155,7 +172,36 @@ def execute_query_pipeline(
         raise PermissionError(f"Role '{user_role}' is not authorized to submit queries")
 
     # 2. Query validation
-    meta = validate_query(dataset_id, field, operator, value, epsilon)
+    try:
+        meta = validate_query(dataset_id, field, operator, value, epsilon)
+    except PolicyViolationError as e:
+        conn_viol = get_connection()
+        try:
+            with conn_viol:
+                record_security_event_db(
+                    conn_viol,
+                    event_type="POLICY_VIOLATION",
+                    outcome="POLICY_VIOLATION",
+                    actor=user_id,
+                    resource=dataset_id,
+                    action="QUERY_VALIDATE",
+                    details=str(e)
+                )
+        finally:
+            conn_viol.close()
+        raise
+
+    # Check Incident Response status fail-closed
+    inc_status = get_incident_status()
+    if not inc_status["releases_allowed"]:
+        raise ReleaseBlockedByIncidentError(
+            f"Privacy releases suspended fail-closed under active incident state '{inc_status['current_state']}': {inc_status['reason']}"
+        )
+    if inc_status["current_state"] == STATE_RESTRICTED and epsilon > inc_status["max_permitted_epsilon"]:
+        raise PolicyViolationError(
+            f"Gateway is operating in RESTRICTED incident state: maximum allowed epsilon is {inc_status['max_permitted_epsilon']}. Requested: {epsilon}."
+        )
+
     fingerprint = compute_query_fingerprint(dataset_id, field, operator, str(value))
     cache_key = compute_cache_key(dataset_id, fingerprint, epsilon, MECHANISM_NAME)
     epsilon_micro = int(round(epsilon * 1_000_000))
@@ -223,7 +269,17 @@ def execute_query_pipeline(
             raise RuntimeError(f"Budget ledger not initialized for dataset: {dataset_id}")
 
         if budget_row["remaining_micro_epsilon"] < epsilon_micro:
-            conn.rollback()
+            record_security_event_db(
+                conn,
+                event_type="BUDGET_EXHAUSTION_ATTEMPT",
+                outcome="BUDGET_EXHAUSTED",
+                actor=user_id,
+                source_ip="internal",
+                resource=dataset_id,
+                action="QUERY_EXECUTE",
+                details=f"Requested epsilon {epsilon} exceeds available allowance {budget_row['remaining_micro_epsilon'] / 1_000_000:.2f}"
+            )
+            conn.commit()
             raise BudgetExhaustedError(
                 f"Privacy budget exhausted for dataset '{dataset_id}'. "
                 f"Requested epsilon {epsilon} exceeds available allowance {budget_row['remaining_micro_epsilon'] / 1_000_000:.2f}."
@@ -276,7 +332,7 @@ def execute_query_pipeline(
             MECHANISM_NAME, user_id, receipt_id, now_iso
         ))
 
-        # 11. Persist Privacy Receipt
+        # 11. Persist Privacy Receipt with Canonical Hash and Ed25519 Enclave Signature
         receipt_data = {
             "receipt_id": receipt_id,
             "release_id": release_id,
@@ -291,17 +347,23 @@ def execute_query_pipeline(
             "remaining_budget": new_remaining_micro / 1_000_000,
             "policy_check_status": "POLICY_CHECK_PASSED",
             "audit_entry_hash": entry_hash,
-            "signature": signature,
+            "key_id": TRUSTED_KEY_ID,
+            "schema_version": RECEIPT_SCHEMA_VERSION,
+            "is_revoked": 0,
             "timestamp": now_iso
         }
+        receipt_hash = compute_receipt_hash(receipt_data)
+        receipt_data["receipt_hash"] = receipt_hash
+        receipt_data["signature"] = signature
 
         conn.execute("""
         INSERT INTO privacy_receipts (
             receipt_id, release_id, user_id, dataset_id, dataset_version,
             query_fingerprint, query_description, mechanism, epsilon_spent,
             cumulative_epsilon, remaining_budget, policy_check_status,
-            audit_entry_hash, signature, timestamp
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+            audit_entry_hash, receipt_hash, signature, key_id, schema_version,
+            is_revoked, timestamp
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?);
         """, (
             receipt_data["receipt_id"], receipt_data["release_id"], receipt_data["user_id"],
             receipt_data["dataset_id"], receipt_data["dataset_version"],
@@ -309,7 +371,9 @@ def execute_query_pipeline(
             receipt_data["mechanism"], receipt_data["epsilon_spent"],
             receipt_data["cumulative_epsilon"], receipt_data["remaining_budget"],
             receipt_data["policy_check_status"], receipt_data["audit_entry_hash"],
-            receipt_data["signature"], receipt_data["timestamp"]
+            receipt_data["receipt_hash"], receipt_data["signature"],
+            receipt_data["key_id"], receipt_data["schema_version"],
+            receipt_data["timestamp"]
         ))
 
         # Commit transaction
@@ -348,13 +412,35 @@ def get_budget_status(dataset_id: str) -> Dict[str, Any]:
         spent = row["spent_micro_epsilon"] / 1_000_000
         remaining = row["remaining_micro_epsilon"] / 1_000_000
 
+        # Retrieve recent releases to guarantee ledger reconciliation in frontend
+        recent_rows = conn.execute("""
+            SELECT release_id, query_description, epsilon_spent, cumulative_epsilon, timestamp
+            FROM privacy_receipts
+            WHERE dataset_id = ?
+            ORDER BY timestamp DESC
+            LIMIT 10;
+        """, (dataset_id,)).fetchall()
+
+        recent_releases = [
+            {
+                "release_id": r["release_id"],
+                "query_description": r["query_description"],
+                "epsilon_spent": r["epsilon_spent"],
+                "cumulative_epsilon": r["cumulative_epsilon"],
+                "timestamp": r["timestamp"]
+            }
+            for r in recent_rows
+        ]
+
         return {
             "dataset_id": dataset_id,
             "cap_epsilon": cap,
             "spent_epsilon": spent,
             "remaining_epsilon": remaining,
             "accounting_notice": DEMO_ACCOUNTING_NOTICE,
-            "updated_at": row["updated_at"]
+            "updated_at": row["updated_at"],
+            "recent_releases": recent_releases
         }
     finally:
         conn.close()
+

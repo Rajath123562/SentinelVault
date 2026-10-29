@@ -94,3 +94,4 @@ def test_06_expired_sessions_are_rejected(client: TestClient):
     resp = client.get("/api/me", headers={"Authorization": f"Bearer {token}"})
     assert resp.status_code == 401
     assert "expired" in resp.json()["detail"].lower()
+

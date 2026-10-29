@@ -1,5 +1,9 @@
 """Pytest fixtures for HOTFIX backend tests."""
 
+import os
+# Ensure isolated test database for test runs, preserving live demonstration DB
+os.environ.setdefault("HOTFIX_DB_PATH", "test_isolated.db")
+
 import pytest
 from datetime import datetime, timezone
 from fastapi.testclient import TestClient

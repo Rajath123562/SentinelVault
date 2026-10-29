@@ -7,8 +7,8 @@ interface HeaderProps {
   phase?: string;
   session?: UserSession | null;
   onLogout?: () => void;
-  activeTab?: 'analytics' | 'receipt' | 'audit' | 'architecture';
-  onSelectTab?: (tab: 'analytics' | 'receipt' | 'audit' | 'architecture') => void;
+  activeTab?: 'analytics' | 'receipt' | 'security' | 'audit' | 'architecture';
+  onSelectTab?: (tab: 'analytics' | 'receipt' | 'security' | 'audit' | 'architecture') => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -53,13 +53,23 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-3">
-            <span className="text-2xl">🛡️</span>
-            <h1 className="text-xl font-bold tracking-tight text-white">
-              HOTFIX <span className="text-slate-400 font-normal">| Privacy-by-Design Analytics Gateway</span>
-            </h1>
+            <span className="text-3xl">🛡️</span>
+            <div>
+              <div className="flex items-center gap-2">
+                <h1 className="text-xl font-bold tracking-tight text-white">
+                  SentinelVault
+                </h1>
+                <span className="text-[10px] px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800 font-mono font-bold">
+                  HOTFIX MVP
+                </span>
+              </div>
+              <p className="text-xs font-semibold text-cyan-400">
+                Analyze Data. Don't Expose It.
+              </p>
+            </div>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
-            Track: Privacy by Design — Unlock Data Without Exposing It • Team {teamId}
+          <p className="text-[11px] text-slate-400 mt-1">
+            Zero-Trust Privacy-Preserving Analytics Gateway • HOTFIX | Team {teamId}
           </p>
         </div>
 
@@ -101,7 +111,7 @@ export const Header: React.FC<HeaderProps> = ({
                 : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:text-slate-200'
             }`}
           >
-            📊 Analytics Dashboard
+            📊 Analytics & Budget
           </button>
 
           <button
@@ -113,6 +123,17 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             📜 Privacy Receipts
+          </button>
+
+          <button
+            onClick={() => onSelectTab('security')}
+            className={`py-1.5 px-3 rounded-lg text-xs font-semibold transition border ${
+              activeTab === 'security'
+                ? 'bg-cyan-950 border-cyan-500 text-cyan-300'
+                : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            🚨 Security Events
           </button>
 
           <button
@@ -141,5 +162,3 @@ export const Header: React.FC<HeaderProps> = ({
     </header>
   );
 };
-
-

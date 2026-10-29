@@ -121,7 +121,7 @@ export async function loginUser(username: string, password: string): Promise<Use
   }
 
   return {
-    username: data.user_id,
+    username: data.username || data.user_id,
     role: data.role,
     token: data.token,
     expires_at: data.expires_at,
@@ -134,6 +134,25 @@ export async function logoutUser(token: string): Promise<void> {
     method: 'POST',
     headers: { Authorization: `Bearer ${token}` },
   });
+}
+
+export async function getMe(token: string): Promise<UserSession> {
+  const url = `${API_BASE_URL}/api/me`;
+  const response = await fetchWithTimeout(url, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Session invalid or expired', response.status);
+  }
+
+  return {
+    username: data.username || data.user_id,
+    role: data.role,
+    token: token,
+    expires_at: data.expires_at || new Date(Date.now() + 86400000).toISOString(),
+  };
 }
 
 // -------------------------------------------------------------
@@ -150,7 +169,25 @@ export async function getDatasets(token: string): Promise<DatasetMetadata[]> {
   if (!response.ok) {
     throw new ApiError(data.detail || 'Failed to fetch datasets', response.status);
   }
-  return data;
+  const rawList: Record<string, any>[] = Array.isArray(data) ? data : [];
+  return rawList.map((d) => {
+    const fields = d.approved_fields || d.allowed_fields || {};
+    const title = d.title || d.name || d.dataset_id || 'Dataset';
+    return {
+      dataset_id: d.dataset_id,
+      title,
+      name: title,
+      description: d.description || '',
+      total_records: typeof d.total_records === 'number' ? d.total_records : 0,
+      privacy_unit: d.privacy_unit || 'record_id',
+      version: d.version || '1.0.0',
+      approved_fields: fields,
+      allowed_fields: fields,
+      is_official_dataset: Boolean(d.is_official_dataset),
+      sensitive_fields_protected: d.sensitive_fields_protected || [],
+      allowed_operators: d.allowed_operators || ['equals'],
+    };
+  });
 }
 
 export async function previewQuery(
@@ -168,7 +205,25 @@ export async function previewQuery(
   if (!response.ok) {
     throw new ApiError(data.detail || 'Query preview rejected', response.status);
   }
-  return data;
+  return {
+    is_valid: true,
+    dataset_id: data.dataset_id || payload.dataset_id,
+    field: data.field || payload.field,
+    operator: data.operator || payload.operator,
+    value: data.value ?? payload.value,
+    epsilon: data.epsilon ?? payload.epsilon,
+    query_fingerprint: data.query_fingerprint || '',
+    estimated_privacy_cost: data.estimated_privacy_cost ?? payload.epsilon,
+    current_remaining_budget: data.current_remaining_budget,
+    is_budget_sufficient: data.is_budget_sufficient ?? true,
+    is_cached_release_available: Boolean(data.is_cached_release_available),
+    policy_status: data.policy_status || 'APPROVED',
+    policy_check: data.policy_status || 'PASSED',
+    global_sensitivity: 1.0,
+    privacy_unit: payload.dataset_id === 'health' ? 'patient_id' : 'account_id',
+    epsilon_requested: data.epsilon ?? payload.epsilon,
+    message: data.message || 'Query parameters validated against dataset policy',
+  };
 }
 
 export async function runQuery(
@@ -196,7 +251,24 @@ export async function runQuery(
   return data;
 }
 
-export async function getBudgetStatus(token: string, datasetId: string): Promise<BudgetStatusResponse> {
+export async function getBudgetStatus(paramA: string, paramB: string): Promise<BudgetStatusResponse> {
+  // Support both (datasetId, token) and (token, datasetId) cleanly
+  let datasetId = 'health';
+  let token = '';
+
+  const knownDatasets = ['health', 'financial', 'education'];
+  if (knownDatasets.includes(paramA.toLowerCase())) {
+    datasetId = paramA;
+    token = paramB;
+  } else if (knownDatasets.includes(paramB.toLowerCase())) {
+    datasetId = paramB;
+    token = paramA;
+  } else {
+    // Default fallback: paramA is datasetId, paramB is token
+    datasetId = paramA;
+    token = paramB;
+  }
+
   const url = `${API_BASE_URL}/api/budget/${datasetId}`;
   const response = await fetchWithTimeout(url, {
     headers: { Authorization: `Bearer ${token}` },
@@ -247,4 +319,175 @@ export async function getEvaluationStatus(token: string): Promise<EvaluationStat
   }
   return data;
 }
+
+export async function getSecurityEvents(token: string, limit = 50): Promise<import('../types/system').SecurityEvent[]> {
+  const url = `${API_BASE_URL}/api/security/events?limit=${limit}`;
+  const response = await fetchWithTimeout(url, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Failed to fetch security events', response.status);
+  }
+  return data;
+}
+
+export async function getSecurityAlerts(token: string, limit = 50): Promise<import('../types/system').SecurityAlert[]> {
+  const url = `${API_BASE_URL}/api/security/alerts?limit=${limit}`;
+  const response = await fetchWithTimeout(url, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Failed to fetch security alerts', response.status);
+  }
+  return data;
+}
+
+export async function getUsers(token: string): Promise<import('../types/system').UserListItem[]> {
+  const url = `${API_BASE_URL}/api/users`;
+  const response = await fetchWithTimeout(url, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Failed to fetch user list', response.status);
+  }
+  return data;
+}
+
+export async function unlockUser(token: string, username: string): Promise<{ unlocked: boolean; message: string }> {
+  const url = `${API_BASE_URL}/api/users/${username}/unlock`;
+  const response = await fetchWithTimeout(url, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Failed to unlock user account', response.status);
+  }
+  return data;
+}
+
+// -------------------------------------------------------------
+// PHASE 6: RECEIPT CRYPTOGRAPHIC VERIFICATION & AUDIT RETRIEVAL
+// -------------------------------------------------------------
+
+export async function verifyReceipt(token: string, receiptId: string): Promise<import('../types/system').ReceiptVerificationResponse> {
+  const url = `${API_BASE_URL}/api/receipts/${receiptId}/verify`;
+  const response = await fetchWithTimeout(url, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Cryptographic receipt verification request failed', response.status);
+  }
+  return data;
+}
+
+export async function getAuditEntries(
+  token: string,
+  params?: { limit?: number; offset?: number; dataset_id?: string; search?: string }
+): Promise<import('../types/system').AuditEntriesResponse> {
+  const q = new URLSearchParams();
+  if (params?.limit) q.set('limit', String(params.limit));
+  if (params?.offset) q.set('offset', String(params.offset));
+  if (params?.dataset_id) q.set('dataset_id', params.dataset_id);
+  if (params?.search) q.set('search', params.search);
+
+  const qs = q.toString() ? `?${q.toString()}` : '';
+  const url = `${API_BASE_URL}/api/audit/entries${qs}`;
+  const response = await fetchWithTimeout(url, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Failed to retrieve audit ledger entries', response.status);
+  }
+  return data;
+}
+
+// -------------------------------------------------------------
+// PHASE 6: INCIDENT RESPONSE & SECURITY MONITORING
+// -------------------------------------------------------------
+
+export async function getIncidentStatus(token: string): Promise<import('../types/system').IncidentStatusResponse> {
+  const url = `${API_BASE_URL}/api/incident/status`;
+  const response = await fetchWithTimeout(url, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Failed to retrieve gateway incident status', response.status);
+  }
+  return data;
+}
+
+export async function transitionIncidentState(
+  token: string,
+  newState: string,
+  reason: string
+): Promise<import('../types/system').IncidentStatusResponse> {
+  const url = `${API_BASE_URL}/api/incident/transition`;
+  const response = await fetchWithTimeout(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ new_state: newState, reason }),
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Failed to transition incident state', response.status);
+  }
+  return data;
+}
+
+export async function acknowledgeAlert(token: string, alertId: string): Promise<any> {
+  const url = `${API_BASE_URL}/api/security/alerts/${alertId}/acknowledge`;
+  const response = await fetchWithTimeout(url, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Failed to acknowledge alert', response.status);
+  }
+  return data;
+}
+
+export async function resolveAlert(
+  token: string,
+  alertId: string,
+  resolutionNotes: string,
+  status: 'RESOLVED' | 'FALSE_POSITIVE' = 'RESOLVED'
+): Promise<any> {
+  const url = `${API_BASE_URL}/api/security/alerts/${alertId}/resolve`;
+  const response = await fetchWithTimeout(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ resolution_notes: resolutionNotes, status }),
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new ApiError(data.detail || 'Failed to resolve alert', response.status);
+  }
+  return data;
+}
+
 

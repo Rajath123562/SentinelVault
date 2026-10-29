@@ -54,3 +54,19 @@ lerna-debug.log*
 Thumbs.db
 *.log
 
+
+# Backups and recovery
+backups/
+backend/backups/
+*.bak
+*.backup
+
+# Archives and submission zips
+*.zip
+
+# Test and temporary databases
+test_isolated.db
+backend/test_isolated.db
+*.db-journal
+*.db-wal
+*.db-shm

@@ -224,3 +224,4 @@ def test_23_failed_operations_do_not_leak_result(client: TestClient, analyst_tok
     count_after = conn.execute("SELECT COUNT(*) as c FROM query_releases").fetchone()["c"]
     conn.close()
     assert count_after == count_before
+
