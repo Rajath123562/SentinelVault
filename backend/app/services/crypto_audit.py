@@ -18,9 +18,15 @@ if not KEYS_DIR.is_absolute() and Path.cwd().name == "backend":
 
 def _get_or_create_keypair() -> tuple[ed25519.Ed25519PrivateKey, ed25519.Ed25519PublicKey]:
     """Retrieves or safely generates an Ed25519 keypair for audit record signing."""
-    KEYS_DIR.mkdir(parents=True, exist_ok=True)
-    priv_path = KEYS_DIR / "ed25519_audit_private.pem"
-    pub_path = KEYS_DIR / "ed25519_audit_public.pem"
+    target_dir = KEYS_DIR
+    try:
+        target_dir.mkdir(parents=True, exist_ok=True)
+    except OSError:
+        target_dir = Path("/tmp/keys")
+        target_dir.mkdir(parents=True, exist_ok=True)
+
+    priv_path = target_dir / "ed25519_audit_private.pem"
+    pub_path = target_dir / "ed25519_audit_public.pem"
 
     if priv_path.exists() and pub_path.exists():
         with open(priv_path, "rb") as f:
@@ -43,10 +49,13 @@ def _get_or_create_keypair() -> tuple[ed25519.Ed25519PrivateKey, ed25519.Ed25519
         format=serialization.PublicFormat.SubjectPublicKeyInfo
     )
 
-    with open(priv_path, "wb") as f:
-        f.write(priv_bytes)
-    with open(pub_path, "wb") as f:
-        f.write(pub_bytes)
+    try:
+        with open(priv_path, "wb") as f:
+            f.write(priv_bytes)
+        with open(pub_path, "wb") as f:
+            f.write(pub_bytes)
+    except OSError:
+        pass
 
     return private_key, public_key
 

@@ -25,7 +25,24 @@ def get_db_path() -> Path:
 def get_connection() -> sqlite3.Connection:
     """Returns an active SQLite connection with row factory configured."""
     db_path = get_db_path()
-    db_path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        db_path.parent.mkdir(parents=True, exist_ok=True)
+    except OSError:
+        pass
+
+    # If the database directory is read-only (e.g. AWS Lambda / Vercel Serverless), fallback to /tmp
+    if os.getenv("VERCEL") or (not os.access(str(db_path.parent), os.W_OK) and not str(db_path).startswith("/tmp")):
+        tmp_db = Path("/tmp/hotfix_mvp.db")
+        if not tmp_db.exists() and db_path.exists():
+            import shutil
+            try:
+                tmp_db.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(str(db_path), str(tmp_db))
+            except Exception:
+                pass
+        if tmp_db.exists():
+            db_path = tmp_db
+
     conn = sqlite3.connect(
         str(db_path),
         timeout=30.0,
